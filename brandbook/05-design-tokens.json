@@ -1,0 +1,152 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$metadata": {
+    "brand": "UNLMTD",
+    "version": "1.0.0",
+    "generated": "2026-03-27",
+    "squad": "AIOX Design Squad"
+  },
+
+  "color": {
+    "primary": {
+      "black": {
+        "$value": "#0D0D0D",
+        "$type": "color",
+        "$description": "UNLMTD Black — preto profundo com calor. Não usar #000000."
+      },
+      "cream": {
+        "$value": "#EDE8DC",
+        "$type": "color",
+        "$description": "UNLMTD Cream — fundo principal claro. Pantone 9183 C."
+      }
+    },
+    "secondary": {
+      "terra": {
+        "$value": "#C4622D",
+        "$type": "color",
+        "$description": "Terra — calor brasileiro, cerâmica artesanal. Uso pontual máx 20% da peça."
+      },
+      "ouro": {
+        "$value": "#C8922A",
+        "$type": "color",
+        "$description": "Ouro Editorial — celebração, premium. Nunca usar junto com Terra."
+      },
+      "grafite": {
+        "$value": "#3D3D3D",
+        "$type": "color",
+        "$description": "Grafite Médio — elementos funcionais, textos secundários."
+      }
+    },
+    "semantic": {
+      "background-dark": { "$value": "{color.primary.black}", "$type": "color" },
+      "background-light": { "$value": "{color.primary.cream}", "$type": "color" },
+      "text-on-dark": { "$value": "{color.primary.cream}", "$type": "color" },
+      "text-on-light": { "$value": "{color.primary.black}", "$type": "color" },
+      "accent": { "$value": "{color.secondary.terra}", "$type": "color" },
+      "text-secondary": { "$value": "{color.secondary.grafite}", "$type": "color" }
+    }
+  },
+
+  "typography": {
+    "font": {
+      "display": {
+        "$value": "'Canela Display', 'DM Serif Display', Georgia, serif",
+        "$type": "fontFamily"
+      },
+      "body": {
+        "$value": "'Neue Haas Grotesk', 'Inter', system-ui, sans-serif",
+        "$type": "fontFamily"
+      }
+    },
+    "size": {
+      "xs":   { "$value": "0.75rem",  "$type": "dimension", "$description": "12px — Caption" },
+      "sm":   { "$value": "0.875rem", "$type": "dimension", "$description": "14px — Body Small" },
+      "base": { "$value": "1rem",     "$type": "dimension", "$description": "16px — Body" },
+      "lg":   { "$value": "1.125rem", "$type": "dimension", "$description": "18px — Body Large" },
+      "xl":   { "$value": "1.25rem",  "$type": "dimension", "$description": "20px — H5" },
+      "2xl":  { "$value": "1.5rem",   "$type": "dimension", "$description": "24px — H4" },
+      "3xl":  { "$value": "2rem",     "$type": "dimension", "$description": "32px — H3" },
+      "4xl":  { "$value": "3rem",     "$type": "dimension", "$description": "48px — H2" },
+      "5xl":  { "$value": "4rem",     "$type": "dimension", "$description": "64px — H1" },
+      "6xl":  { "$value": "6rem",     "$type": "dimension", "$description": "96px — Display" }
+    },
+    "weight": {
+      "light":   { "$value": 300, "$type": "fontWeight" },
+      "regular": { "$value": 400, "$type": "fontWeight" },
+      "medium":  { "$value": 500, "$type": "fontWeight" },
+      "bold":    { "$value": 700, "$type": "fontWeight" }
+    },
+    "lineHeight": {
+      "tight":  { "$value": 1.15, "$type": "number", "$description": "Headlines" },
+      "normal": { "$value": 1.5,  "$type": "number", "$description": "Body text" },
+      "loose":  { "$value": 1.75, "$type": "number", "$description": "Long-form reading" }
+    },
+    "letterSpacing": {
+      "display": { "$value": "-0.03em", "$type": "dimension", "$description": "Canela Display — mais condensado = mais luxo" },
+      "tight":   { "$value": "-0.01em", "$type": "dimension" },
+      "normal":  { "$value": "0em",     "$type": "dimension" },
+      "wide":    { "$value": "0.05em",  "$type": "dimension", "$description": "Labels em caps" }
+    }
+  },
+
+  "spacing": {
+    "1":  { "$value": "0.25rem",  "$type": "dimension" },
+    "2":  { "$value": "0.5rem",   "$type": "dimension" },
+    "3":  { "$value": "0.75rem",  "$type": "dimension" },
+    "4":  { "$value": "1rem",     "$type": "dimension" },
+    "6":  { "$value": "1.5rem",   "$type": "dimension" },
+    "8":  { "$value": "2rem",     "$type": "dimension" },
+    "12": { "$value": "3rem",     "$type": "dimension" },
+    "16": { "$value": "4rem",     "$type": "dimension" },
+    "24": { "$value": "6rem",     "$type": "dimension" },
+    "32": { "$value": "8rem",     "$type": "dimension" }
+  },
+
+  "logo": {
+    "wordmark": {
+      "description": "Wordmark UNLMTD — serif ornamental com swashes. Asset vetorial. Não recriar em fonte.",
+      "formats": ["SVG", "PNG (transparente)", "PDF"],
+      "variations": {
+        "primary-cream-on-black": "Uso principal. Cream sobre black.",
+        "reversed-black-on-cream": "Uso secundário. Black sobre cream.",
+        "mono-black": "Monocromático preto. Para fundos claros neutros.",
+        "mono-white": "Monocromático branco. Para fundos escuros não-black."
+      },
+      "clearSpace": "Equivalente à altura da letra U em todos os lados",
+      "minSize": {
+        "digital": "120px de largura",
+        "print": "35mm de largura"
+      }
+    },
+    "symbol": {
+      "description": "Símbolo Infinito ∞ multi-linha concêntrico. Asset vetorial.",
+      "formats": ["SVG", "PNG (transparente)", "PDF"],
+      "variations": {
+        "primary-black-on-cream": "Uso principal do símbolo.",
+        "reversed-cream-on-black": "Uso em fundos escuros.",
+        "mono-black": "Monocromático."
+      },
+      "clearSpace": "Equivalente ao raio do símbolo em todos os lados",
+      "minSize": {
+        "digital": "48px",
+        "print": "12mm"
+      }
+    },
+    "combined": {
+      "horizontal": "Símbolo à esquerda + Wordmark à direita",
+      "vertical": "Símbolo acima + Wordmark abaixo",
+      "preference": "Horizontal para uso geral. Vertical para formatos quadrados."
+    }
+  },
+
+  "brandDonts": [
+    "Nunca recriar o wordmark em fonte — usar sempre o asset vetorial",
+    "Nunca distorcer ou rotacionar o logo",
+    "Nunca colocar o logo sobre fundo com padrão ou imagem sem overlay",
+    "Nunca alterar as cores do logo fora das variações aprovadas",
+    "Nunca usar o logo em tamanho menor que o mínimo especificado",
+    "Nunca usar gradientes sobre ou no logo",
+    "Nunca adicionar sombras ao logo",
+    "Nunca usar o wordmark separado do símbolo em formatos onde cabem os dois"
+  ]
+}

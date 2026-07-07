@@ -1,0 +1,306 @@
+{
+  "$metadata": {
+    "tokenSetOrder": ["global", "semantic", "typography", "spacing"]
+  },
+  "global": {
+    "color": {
+      "black": {
+        "value": "#0D0D0D",
+        "type": "color",
+        "description": "UNLMTD Black — preto profundo com calor. NAO usar #000000."
+      },
+      "cream": {
+        "value": "#EDE8DC",
+        "type": "color",
+        "description": "UNLMTD Cream — fundo principal claro. Pantone 9183 C."
+      },
+      "terra": {
+        "value": "#C4622D",
+        "type": "color",
+        "description": "Terra — calor brasileiro. Uso pontual, max 20% da peca. Pantone 7526 C."
+      },
+      "ouro": {
+        "value": "#C8922A",
+        "type": "color",
+        "description": "Ouro Editorial — celebracao, premium. NUNCA usar junto com Terra. Pantone 7550 C."
+      },
+      "grafite": {
+        "value": "#3D3D3D",
+        "type": "color",
+        "description": "Grafite Medio — elementos funcionais, textos secundarios. Pantone Cool Gray 11 C."
+      }
+    },
+    "font": {
+      "display": {
+        "value": "Canela Display",
+        "type": "fontFamilies",
+        "description": "Headlines e display. Licenca: Commercial Type (commercialtype.com/catalog/canela). Alternativa gratuita: DM Serif Display."
+      },
+      "body": {
+        "value": "Neue Haas Grotesk Display",
+        "type": "fontFamilies",
+        "description": "Corpo e interface. Licenca: Monotype. Alternativa gratuita: Inter."
+      }
+    },
+    "fontWeight": {
+      "light": {
+        "value": "300",
+        "type": "fontWeights"
+      },
+      "regular": {
+        "value": "400",
+        "type": "fontWeights"
+      },
+      "medium": {
+        "value": "500",
+        "type": "fontWeights"
+      },
+      "bold": {
+        "value": "700",
+        "type": "fontWeights"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "value": "115%",
+        "type": "lineHeights",
+        "description": "Headlines — Canela Display"
+      },
+      "normal": {
+        "value": "150%",
+        "type": "lineHeights",
+        "description": "Body text — Neue Haas Grotesk"
+      },
+      "loose": {
+        "value": "175%",
+        "type": "lineHeights",
+        "description": "Leitura longa"
+      }
+    },
+    "letterSpacing": {
+      "display": {
+        "value": "-3%",
+        "type": "letterSpacing",
+        "description": "Canela Display — mais condensado = mais luxo"
+      },
+      "tight": {
+        "value": "-1%",
+        "type": "letterSpacing"
+      },
+      "normal": {
+        "value": "0%",
+        "type": "letterSpacing"
+      },
+      "wide": {
+        "value": "5%",
+        "type": "letterSpacing",
+        "description": "Labels em caps — Neue Haas Grotesk"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "value": "12",
+        "type": "fontSizes",
+        "description": "Caption — creditos, rodapes"
+      },
+      "sm": {
+        "value": "14",
+        "type": "fontSizes",
+        "description": "Body Small — notas, legendas"
+      },
+      "base": {
+        "value": "16",
+        "type": "fontSizes",
+        "description": "Body — corpo principal"
+      },
+      "lg": {
+        "value": "18",
+        "type": "fontSizes",
+        "description": "Body Large — intro de secao, lead"
+      },
+      "xl": {
+        "value": "20",
+        "type": "fontSizes",
+        "description": "H5 — labels e subtitulos"
+      },
+      "2xl": {
+        "value": "24",
+        "type": "fontSizes",
+        "description": "H4 — titulos de bloco"
+      },
+      "3xl": {
+        "value": "32",
+        "type": "fontSizes",
+        "description": "H3 — sub-secoes (Canela Italic)"
+      },
+      "4xl": {
+        "value": "48",
+        "type": "fontSizes",
+        "description": "H2 — secoes e capitulos (Canela Display)"
+      },
+      "5xl": {
+        "value": "64",
+        "type": "fontSizes",
+        "description": "H1 — titulo principal de pagina (Canela Display)"
+      },
+      "6xl": {
+        "value": "96",
+        "type": "fontSizes",
+        "description": "Display — capas, aberturas de secao (Canela Display)"
+      }
+    },
+    "spacing": {
+      "1":  { "value": "4",  "type": "spacing" },
+      "2":  { "value": "8",  "type": "spacing" },
+      "3":  { "value": "12", "type": "spacing" },
+      "4":  { "value": "16", "type": "spacing" },
+      "6":  { "value": "24", "type": "spacing" },
+      "8":  { "value": "32", "type": "spacing" },
+      "12": { "value": "48", "type": "spacing" },
+      "16": { "value": "64", "type": "spacing" },
+      "24": { "value": "96", "type": "spacing" },
+      "32": { "value": "128","type": "spacing" }
+    },
+    "borderRadius": {
+      "none":  { "value": "0",  "type": "borderRadius" },
+      "sm":    { "value": "4",  "type": "borderRadius" },
+      "md":    { "value": "8",  "type": "borderRadius" },
+      "pill":  { "value": "36", "type": "borderRadius", "description": "Pill buttons (ex: CTA stories)" },
+      "full":  { "value": "9999","type": "borderRadius" }
+    }
+  },
+  "semantic": {
+    "background": {
+      "dark": {
+        "value": "{global.color.black}",
+        "type": "color",
+        "description": "Fundo escuro principal"
+      },
+      "light": {
+        "value": "{global.color.cream}",
+        "type": "color",
+        "description": "Fundo claro principal"
+      }
+    },
+    "text": {
+      "on-dark": {
+        "value": "{global.color.cream}",
+        "type": "color",
+        "description": "Texto sobre fundo escuro"
+      },
+      "on-light": {
+        "value": "{global.color.black}",
+        "type": "color",
+        "description": "Texto sobre fundo claro"
+      },
+      "secondary": {
+        "value": "{global.color.grafite}",
+        "type": "color",
+        "description": "Texto secundario, notas, legendas"
+      }
+    },
+    "accent": {
+      "default": {
+        "value": "{global.color.terra}",
+        "type": "color",
+        "description": "Acento principal — CTAs, destaques. Max 20% da peca."
+      },
+      "premium": {
+        "value": "{global.color.ouro}",
+        "type": "color",
+        "description": "Acento premium — awards, celebracao. NUNCA junto com terra."
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "fontFamily": { "value": "{global.font.display}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.regular}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.6xl}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.tight}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.display}", "type": "letterSpacing" },
+      "description": "Canela Display Regular — capas, aberturas de secao"
+    },
+    "h1": {
+      "fontFamily": { "value": "{global.font.display}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.regular}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.5xl}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.tight}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.display}", "type": "letterSpacing" },
+      "description": "Canela Display Regular — titulo principal de pagina"
+    },
+    "h2": {
+      "fontFamily": { "value": "{global.font.display}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.regular}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.4xl}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.tight}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.display}", "type": "letterSpacing" },
+      "description": "Canela Display Regular — secoes e capitulos"
+    },
+    "h3": {
+      "fontFamily": { "value": "{global.font.display}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.regular}", "type": "fontWeights" },
+      "fontStyle":  { "value": "italic", "type": "other", "description": "Canela Display Italic para sub-secoes" },
+      "fontSize":   { "value": "{global.fontSize.3xl}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.tight}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.tight}", "type": "letterSpacing" },
+      "description": "Canela Display Italic — sub-secoes"
+    },
+    "h4": {
+      "fontFamily": { "value": "{global.font.body}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.medium}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.2xl}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.tight}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.normal}", "type": "letterSpacing" },
+      "description": "Neue Haas Grotesk Medium — titulos de bloco"
+    },
+    "h5": {
+      "fontFamily": { "value": "{global.font.body}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.medium}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.xl}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.tight}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.normal}", "type": "letterSpacing" },
+      "description": "Neue Haas Grotesk Medium — labels e subtitulos"
+    },
+    "body-lg": {
+      "fontFamily": { "value": "{global.font.body}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.regular}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.lg}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.normal}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.normal}", "type": "letterSpacing" },
+      "description": "Neue Haas Grotesk Regular — intro de secao, lead"
+    },
+    "body": {
+      "fontFamily": { "value": "{global.font.body}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.regular}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.base}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.normal}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.normal}", "type": "letterSpacing" },
+      "description": "Neue Haas Grotesk Regular — corpo principal"
+    },
+    "body-sm": {
+      "fontFamily": { "value": "{global.font.body}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.regular}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.sm}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.normal}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.normal}", "type": "letterSpacing" },
+      "description": "Neue Haas Grotesk Regular — notas, legendas"
+    },
+    "caption": {
+      "fontFamily": { "value": "{global.font.body}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.light}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.xs}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.normal}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.normal}", "type": "letterSpacing" },
+      "description": "Neue Haas Grotesk Light — creditos, rodapes"
+    },
+    "label": {
+      "fontFamily": { "value": "{global.font.body}", "type": "fontFamilies" },
+      "fontWeight": { "value": "{global.fontWeight.medium}", "type": "fontWeights" },
+      "fontSize":   { "value": "{global.fontSize.xs}", "type": "fontSizes" },
+      "lineHeight": { "value": "{global.lineHeight.tight}", "type": "lineHeights" },
+      "letterSpacing": { "value": "{global.letterSpacing.wide}", "type": "letterSpacing" },
+      "description": "Neue Haas Grotesk Medium — UI labels, tags, uppercase"
+    }
+  }
+}

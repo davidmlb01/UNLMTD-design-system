@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-black:      #0D0D0D;
+    --color-cream:      #EDE8DC;
+    --color-bone:       #F5F0E8;
+    --color-ink:        #1A1A1A;
+    --color-champagne:  #C4A45A;
+    --color-rust:       #C1440E;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-cream);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+}
+
+@layer components {
+  .text-display {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .text-body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Divisor vertical de marca */
+  .brand-divider {
+    width: 1px;
+    background-color: var(--color-cream);
+    opacity: 0.3;
+  }
+
+  /* Carimbo de marca (wordmark rotacionado) */
+  .brand-stamp {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    opacity: 0.4;
+  }
+}

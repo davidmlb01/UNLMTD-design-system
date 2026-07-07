@@ -1,0 +1,2978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNLMTD Brandbook v2.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════
+       UNLMTD BRANDBOOK v2.0 — BASE STYLES
+       ═══════════════════════════════════════════ */
+
+    :root {
+      /* Primary */
+      --black: #0D0D0D;
+      --cream: #EDE8DC;
+
+      /* Secondary */
+      --terra: #C4622D;
+      --ouro: #C8922A;
+      --grafite: #3D3D3D;
+
+      /* Semantic */
+      --success: #22C55E;
+      --error: #EF4444;
+      --warning: #F59E0B;
+      --info: #3B82F6;
+
+      /* Submarca */
+      --video-color: #C4622D;
+      --digital-color: #C8922A;
+      --ia-color: #3B82F6;
+      --branding-color: rgba(237,232,220,0.4);
+      --music-color: #9333EA;
+      --strategy-color: #22C55E;
+
+      /* Typography */
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+
+      /* Spacing */
+      --section-pad: 120px;
+      --section-pad-mobile: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background: var(--terra);
+      color: var(--cream);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--terra);
+      text-decoration: none;
+      transition: opacity 0.2s ease-out;
+    }
+
+    a:hover {
+      opacity: 0.75;
+    }
+
+    /* ═══════════════════════════════════════════
+       LAYOUT
+       ═══════════════════════════════════════════ */
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION SYSTEM
+       ═══════════════════════════════════════════ */
+
+    .section {
+      position: relative;
+      padding: var(--section-pad) 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: var(--section-pad-mobile) 0;
+      }
+    }
+
+    .section--dark {
+      background: var(--black);
+      color: var(--cream);
+    }
+
+    .section--cream {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .section--cream ::selection {
+      background: var(--terra);
+      color: var(--cream);
+    }
+
+    .section--cream a {
+      color: var(--terra);
+    }
+
+    .section__number {
+      position: absolute;
+      top: -40px;
+      right: -20px;
+      font-family: var(--font-display);
+      font-size: clamp(120px, 15vw, 200px);
+      font-weight: 400;
+      opacity: 0.06;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .section--cream .section__number {
+      color: var(--black);
+      opacity: 0.05;
+    }
+
+    .section--dark .section__number {
+      color: var(--cream);
+    }
+
+    /* ═══════════════════════════════════════════
+       TYPOGRAPHY
+       ═══════════════════════════════════════════ */
+
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 2rem + 5vw, 6rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-weight: 400;
+    }
+
+    .h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 400;
+    }
+
+    .h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 1rem + 2.5vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+    }
+
+    .h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .h4 {
+      font-family: var(--font-body);
+      font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .body-lg {
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    .body {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .caption {
+      font-size: 0.75rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════════
+       COMPONENTS
+       ═══════════════════════════════════════════ */
+
+    .terra-line {
+      width: 80px;
+      height: 2px;
+      background: var(--terra);
+      margin: 24px 0;
+    }
+
+    .ouro-line {
+      width: 80px;
+      height: 2px;
+      background: var(--ouro);
+      margin: 24px 0;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .section-label__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--terra);
+    }
+
+    .section-label__text {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    .section--cream .section-label__dot {
+      background: var(--terra);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.08;
+      margin: 48px 0;
+    }
+
+    .spacer-sm { height: 24px; }
+    .spacer-md { height: 48px; }
+    .spacer-lg { height: 80px; }
+
+    /* ═══════════════════════════════════════════
+       COVER
+       ═══════════════════════════════════════════ */
+
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: var(--black);
+      padding: 64px 32px;
+    }
+
+    .cover__infinity {
+      position: absolute;
+      width: 60vw;
+      max-width: 600px;
+      opacity: 0.03;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .cover__wordmark {
+      width: min(400px, 70vw);
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover__tagline {
+      font-family: var(--font-body);
+      font-size: clamp(0.75rem, 0.5rem + 0.5vw, 0.875rem);
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 64px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1rem + 3vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--cream);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 24px;
+    }
+
+    .cover__subtitle {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      opacity: 0.4;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ═══════════════════════════════════════════
+       TABLE OF CONTENTS
+       ═══════════════════════════════════════════ */
+
+    .toc {
+      background: var(--black);
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(237,232,220,0.06);
+    }
+
+    .toc__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0;
+    }
+
+    .toc__item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(237,232,220,0.06);
+      transition: all 0.2s ease-out;
+    }
+
+    .toc__item:hover {
+      padding-left: 8px;
+      border-bottom-color: var(--terra);
+    }
+
+    .toc__num {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--terra);
+      opacity: 0.6;
+      min-width: 40px;
+    }
+
+    .toc__title {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--cream);
+      opacity: 0.85;
+    }
+
+    /* ═══════════════════════════════════════════
+       COLOR SWATCHES
+       ═══════════════════════════════════════════ */
+
+    .swatch-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .swatch {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .swatch__color {
+      width: 100%;
+      height: 120px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .swatch__info {
+      padding: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .section--cream .swatch__info {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.08);
+    }
+
+    .swatch__name {
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 4px;
+    }
+
+    .swatch__hex {
+      font-family: 'Inter', monospace;
+      font-size: 0.8125rem;
+      opacity: 0.6;
+    }
+
+    .swatch__use {
+      font-size: 0.75rem;
+      opacity: 0.5;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════════════
+       TABLES
+       ═══════════════════════════════════════════ */
+
+    .brand-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+    }
+
+    .brand-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .brand-table td {
+      padding: 14px 16px;
+      font-size: 0.9375rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+
+    .section--cream .brand-table th {
+      border-bottom-color: rgba(0,0,0,0.12);
+    }
+
+    .section--cream .brand-table td {
+      border-bottom-color: rgba(0,0,0,0.06);
+    }
+
+    .brand-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ═══════════════════════════════════════════
+       MANIFESTO
+       ═══════════════════════════════════════════ */
+
+    .manifesto {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 32px;
+      background: var(--black);
+      position: relative;
+    }
+
+    .manifesto__text {
+      max-width: 800px;
+    }
+
+    .manifesto__line {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 0.8rem + 1.5vw, 2rem);
+      line-height: 1.8;
+      letter-spacing: -0.01em;
+      color: var(--cream);
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+
+    .manifesto__line em {
+      font-style: normal;
+      color: var(--terra);
+      opacity: 1;
+    }
+
+    /* ═══════════════════════════════════════════
+       HEADLINE SHOWCASE
+       ═══════════════════════════════════════════ */
+
+    .headline-card {
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(237,232,220,0.06);
+    }
+
+    .headline-card:last-child {
+      border-bottom: none;
+    }
+
+    .headline-card__context {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 16px;
+    }
+
+    .headline-card__text {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    /* ═══════════════════════════════════════════
+       SUBMARCA LOCKUP
+       ═══════════════════════════════════════════ */
+
+    .submarca-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .lockup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      padding: 40px 24px;
+      border: 1px solid rgba(237,232,220,0.06);
+      border-radius: 12px;
+      transition: border-color 0.3s ease-out;
+    }
+
+    .lockup:hover {
+      border-color: rgba(237,232,220,0.15);
+    }
+
+    .lockup__wordmark {
+      height: 36px;
+      filter: brightness(0) invert(1);
+    }
+
+    .lockup__line {
+      width: 80px;
+      height: 2px;
+    }
+
+    .lockup__descriptor {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* Horizontal lockup */
+    .lockup--h {
+      flex-direction: row;
+      padding: 24px 32px;
+    }
+
+    .lockup--h .lockup__wordmark {
+      height: 24px;
+    }
+
+    .lockup--h .lockup__line {
+      width: 40px;
+      height: 2px;
+    }
+
+    .lockup--h .lockup__descriptor {
+      font-size: 0.6875rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       DO / DON'T
+       ═══════════════════════════════════════════ */
+
+    .rule-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .rule-list li {
+      padding: 10px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+
+    .rule-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .rule-list--do li::before {
+      background: var(--success);
+    }
+
+    .rule-list--dont li::before {
+      background: var(--error);
+    }
+
+    /* ═══════════════════════════════════════════
+       TYPE SCALE DEMO
+       ═══════════════════════════════════════════ */
+
+    .type-demo {
+      margin-top: 32px;
+    }
+
+    .type-demo__row {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(237,232,220,0.04);
+    }
+
+    .section--cream .type-demo__row {
+      border-bottom-color: rgba(0,0,0,0.06);
+    }
+
+    .type-demo__meta {
+      min-width: 100px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      flex-shrink: 0;
+    }
+
+    .type-demo__size {
+      min-width: 60px;
+      font-size: 0.75rem;
+      opacity: 0.3;
+      flex-shrink: 0;
+      font-family: 'Inter', monospace;
+    }
+
+    .type-demo__sample {
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (max-width: 768px) {
+      .type-demo__row {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .type-demo__meta,
+      .type-demo__size {
+        min-width: auto;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       DIMENSION BARS (Tom de Voz)
+       ═══════════════════════════════════════════ */
+
+    .dimension {
+      margin-bottom: 24px;
+    }
+
+    .dimension__labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+
+    .dimension__bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(237,232,220,0.08);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .section--cream .dimension__bar {
+      background: rgba(0,0,0,0.08);
+    }
+
+    .dimension__fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--terra);
+      position: relative;
+    }
+
+    .dimension__marker {
+      position: absolute;
+      right: -4px;
+      top: -4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--terra);
+    }
+
+    /* ═══════════════════════════════════════════
+       VOCAB CLOUD
+       ═══════════════════════════════════════════ */
+
+    .vocab-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .vocab-cloud__word {
+      padding: 8px 16px;
+      border: 1px solid rgba(237,232,220,0.1);
+      border-radius: 100px;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      opacity: 0.75;
+      transition: all 0.2s ease-out;
+    }
+
+    .vocab-cloud__word:hover {
+      border-color: var(--terra);
+      opacity: 1;
+    }
+
+    .vocab-cloud--avoid .vocab-cloud__word {
+      border-color: rgba(239,68,68,0.2);
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
+
+    .section--cream .vocab-cloud__word {
+      border-color: rgba(0,0,0,0.12);
+    }
+
+    /* ═══════════════════════════════════════════
+       PHOTOGRAPHY
+       ═══════════════════════════════════════════ */
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-top: 32px;
+    }
+
+    .photo-grid__item {
+      aspect-ratio: 3/2;
+      background: rgba(237,232,220,0.04);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      opacity: 0.3;
+      text-align: center;
+      padding: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       QUOTE BLOCK
+       ═══════════════════════════════════════════ */
+
+    .quote-block {
+      border-left: 3px solid var(--terra);
+      padding-left: 24px;
+      margin: 32px 0;
+    }
+
+    .quote-block__text {
+      font-family: var(--font-display);
+      font-size: clamp(1.125rem, 0.8rem + 1vw, 1.5rem);
+      font-style: italic;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .quote-block__attr {
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.4;
+      margin-top: 12px;
+    }
+
+    /* ═══════════════════════════════════════════
+       PILLAR CARDS
+       ═══════════════════════════════════════════ */
+
+    .pillar-card {
+      padding: 32px;
+      border: 1px solid rgba(237,232,220,0.06);
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .pillar-card__title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .pillar-card__desc {
+      font-size: 0.875rem;
+      opacity: 0.6;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .pillar-card__voice {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--terra);
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ */
+
+    .footer {
+      background: var(--black);
+      padding: 64px 0;
+      text-align: center;
+      border-top: 1px solid rgba(237,232,220,0.06);
+    }
+
+    .footer__wordmark {
+      height: 32px;
+      margin-bottom: 16px;
+      filter: brightness(0) invert(1);
+      opacity: 0.4;
+    }
+
+    .footer__text {
+      font-size: 0.75rem;
+      font-weight: 300;
+      opacity: 0.25;
+      letter-spacing: 0.1em;
+    }
+
+    /* ═══════════════════════════════════════════
+       SCROLL REVEAL
+       ═══════════════════════════════════════════ */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0,0,0.2,1), transform 0.5s cubic-bezier(0,0,0.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+    .reveal-stagger > .reveal:nth-child(2) { transition-delay: 50ms; }
+    .reveal-stagger > .reveal:nth-child(3) { transition-delay: 100ms; }
+    .reveal-stagger > .reveal:nth-child(4) { transition-delay: 150ms; }
+    .reveal-stagger > .reveal:nth-child(5) { transition-delay: 200ms; }
+    .reveal-stagger > .reveal:nth-child(6) { transition-delay: 250ms; }
+    .reveal-stagger > .reveal:nth-child(7) { transition-delay: 300ms; }
+    .reveal-stagger > .reveal:nth-child(8) { transition-delay: 350ms; }
+
+    /* ═══════════════════════════════════════════
+       COMPARISON TABLE
+       ═══════════════════════════════════════════ */
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 0.9375rem;
+    }
+
+    .compare-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      padding: 12px 16px;
+      border-bottom: 2px solid rgba(237,232,220,0.08);
+    }
+
+    .compare-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(237,232,220,0.04);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .compare-table .wrong {
+      color: var(--error);
+      opacity: 0.7;
+    }
+
+    .compare-table .right {
+      color: var(--success);
+    }
+
+    .section--cream .compare-table th {
+      border-bottom-color: rgba(0,0,0,0.12);
+    }
+
+    .section--cream .compare-table td {
+      border-bottom-color: rgba(0,0,0,0.06);
+    }
+
+    /* ═══════════════════════════════════════════
+       SHAPELESS CREATIVE MOMENT
+       ═══════════════════════════════════════════ */
+
+    .shapeless-moment {
+      text-align: center;
+      padding: 120px 32px;
+      position: relative;
+    }
+
+    .shapeless-moment__phrase {
+      font-family: var(--font-body);
+      font-size: clamp(2rem, 1rem + 4vw, 5rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+    }
+
+    .shapeless-moment__sub {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-top: 24px;
+    }
+
+    /* ═══════════════════════════════════════════
+       ACCESSIBILITY BADGE
+       ═══════════════════════════════════════════ */
+
+    .a11y-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .a11y-badge--aaa {
+      background: rgba(34,197,94,0.15);
+      color: var(--success);
+    }
+
+    .a11y-badge--aa {
+      background: rgba(245,158,11,0.15);
+      color: var(--warning);
+    }
+
+    .a11y-badge--fail {
+      background: rgba(239,68,68,0.15);
+      color: var(--error);
+    }
+
+    /* ═══════════════════════════════════════════
+       MOTION DEMO
+       ═══════════════════════════════════════════ */
+
+    .motion-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .motion-bar__label {
+      min-width: 80px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.5;
+    }
+
+    .motion-bar__track {
+      flex: 1;
+      height: 4px;
+      background: rgba(237,232,220,0.06);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .motion-bar__fill {
+      height: 100%;
+      background: var(--terra);
+      border-radius: 2px;
+    }
+
+    .motion-bar__time {
+      min-width: 50px;
+      font-size: 0.75rem;
+      opacity: 0.4;
+      text-align: right;
+      font-family: 'Inter', monospace;
+    }
+
+    /* Responsive pattern */
+    .responsive-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    @media (min-width: 769px) {
+      .responsive-grid--4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .responsive-grid--4 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Token card */
+    .token-card {
+      padding: 20px;
+      border: 1px solid rgba(237,232,220,0.06);
+      border-radius: 8px;
+    }
+
+    .token-card__label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 8px;
+    }
+
+    .token-card__value {
+      font-family: 'Inter', monospace;
+      font-size: 0.875rem;
+      color: var(--terra);
+    }
+
+    .section--cream .token-card {
+      border-color: rgba(0,0,0,0.08);
+    }
+
+    .section--cream .token-card__value {
+      color: var(--terra);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       COVER
+       ═══════════════════════════════════════════ -->
+  <header class="cover" id="top">
+    <img src="brandbook/assets/unlmtd-symbol-infinity.svg" alt="" class="cover__infinity" aria-hidden="true">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="cover__wordmark" style="filter: brightness(0) invert(1);">
+    <div class="cover__tagline">Shapeless Creative</div>
+    <h1 class="cover__title">Brandbook v2.0</h1>
+    <p class="cover__subtitle">Maio 2026</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       TABLE OF CONTENTS
+       ═══════════════════════════════════════════ -->
+  <nav class="toc" id="toc">
+    <div class="container">
+      <div class="section-label">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Conteudo</span>
+      </div>
+      <div class="toc__grid">
+        <a href="#foundation" class="toc__item">
+          <span class="toc__num">01</span>
+          <span class="toc__title">Brand Foundation</span>
+        </a>
+        <a href="#manifesto" class="toc__item">
+          <span class="toc__num">02</span>
+          <span class="toc__title">Manifesto</span>
+        </a>
+        <a href="#colors" class="toc__item">
+          <span class="toc__num">03</span>
+          <span class="toc__title">Sistema de Cores</span>
+        </a>
+        <a href="#typography" class="toc__item">
+          <span class="toc__num">04</span>
+          <span class="toc__title">Sistema Tipográfico</span>
+        </a>
+        <a href="#tone" class="toc__item">
+          <span class="toc__num">05</span>
+          <span class="toc__title">Tom de Voz</span>
+        </a>
+        <a href="#submarcas" class="toc__item">
+          <span class="toc__num">06</span>
+          <span class="toc__title">Sistema de Submarcas</span>
+        </a>
+        <a href="#motion" class="toc__item">
+          <span class="toc__num">07</span>
+          <span class="toc__title">Motion Guidelines</span>
+        </a>
+        <a href="#headlines" class="toc__item">
+          <span class="toc__num">08</span>
+          <span class="toc__title">Banco de Headlines</span>
+        </a>
+        <a href="#digital" class="toc__item">
+          <span class="toc__num">09</span>
+          <span class="toc__title">Digital &amp; Responsive</span>
+        </a>
+        <a href="#photography" class="toc__item">
+          <span class="toc__num">10</span>
+          <span class="toc__title">Direção de Fotografia</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       01 — BRAND FOUNDATION
+       ═══════════════════════════════════════════ -->
+  <section class="section section--dark" id="foundation">
+    <div class="section__number">01</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Brand Foundation</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 48px;">A base de tudo<br>que a UNLMTD é.</h2>
+
+      <!-- Archetype -->
+      <div class="grid-2 reveal">
+        <div>
+          <div class="h3" style="margin-bottom: 16px;">Arquetipo Primario: Creator</div>
+          <div class="terra-line"></div>
+          <p class="body-lg" style="opacity: 0.75; margin-bottom: 24px;">Desejo: Criar algo de valor duradouro atraves da cocriação.</p>
+          <p class="body" style="opacity: 0.55;">Medo: A mediocridade. O generico. O "mais do mesmo".</p>
+          <p class="body" style="opacity: 0.55;">Estrategia: Controle artistico radical + colaboração sem hierarquia.</p>
+        </div>
+        <div>
+          <div class="h3" style="margin-bottom: 16px;">Arquetipo Secundario: Outlaw</div>
+          <div class="terra-line" style="background: var(--ouro);"></div>
+          <p class="body-lg" style="opacity: 0.75; margin-bottom: 24px;">Influencia: Quebrar as regras do mercado criativo brasileiro.</p>
+          <p class="body" style="opacity: 0.55;">Expressão: "Sem caixa, sem rotulos, sem formula".</p>
+          <p class="body" style="opacity: 0.55;">Limite: Rebelde mas inclusivo. Nunca agressivo ou excludente.</p>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <div class="quote-block reveal">
+        <p class="quote-block__text">A UNLMTD é o Creator que se recusa a seguir as regras do proprio mercado criativo. Adobe e Creator puro. Harley e Outlaw puro. A UNLMTD e os dois. E isso e whitespace real no mercado de agencias BR.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Posicionamento -->
+      <div class="reveal">
+        <div class="h3" style="margin-bottom: 24px;">Posicionamento</div>
+        <div class="grid-2">
+          <div>
+            <p class="label" style="color: var(--terra); margin-bottom: 12px;">O que a UNLMTD e</p>
+            <p class="body-lg" style="opacity: 0.8;">Uma plataforma de cocriação que conecta talento high-potential com os maiores desafios do mercado. Não e uma agencia tradicional. Não tem formula. Tem processo, tem pessoas, tem resultado.</p>
+          </div>
+          <div>
+            <p class="label" style="color: var(--terra); margin-bottom: 12px;">Para quem</p>
+            <p class="body-lg" style="opacity: 0.8;">Marcas que ja provaram que o padrão não chega la. Que querem processo diferente para resultado diferente.</p>
+            <div class="spacer-sm"></div>
+            <p class="label" style="color: var(--ouro); margin-bottom: 12px;">Diferença real</p>
+            <p class="body" style="opacity: 0.7;">Plug and Play de talento curado. Equipes enxutas. Resultado com custo, qualificação e prazo em equilibrio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Os Nove Ideais -->
+      <div class="reveal">
+        <div class="h3" style="margin-bottom: 24px;">Os Nove Ideais (Alina Wheeler)</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Ideal</th>
+              <th>Status</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Vision</td><td style="color: var(--success);">Forte</td><td>Manifesto claro, liderança definida</td></tr>
+            <tr><td>Meaning</td><td style="color: var(--success);">Forte</td><td>Big idea: cocriação radical sem limites</td></tr>
+            <tr><td>Authenticity</td><td style="color: var(--success);">Solido</td><td>Posicionamento genuino, vivido</td></tr>
+            <tr><td>Differentiation</td><td style="color: var(--success);">Forte</td><td>Wordmark ornamental unico no mercado BR</td></tr>
+            <tr><td>Sustainability</td><td style="color: var(--warning);">Em progresso</td><td>Este brandbook é o ato de sustentabilidade</td></tr>
+            <tr><td>Coherence</td><td style="color: var(--terra);">Objetivo central</td><td>Sistema de identidade resolve isso</td></tr>
+            <tr><td>Flexibility</td><td style="color: var(--success);">Natural</td><td>"Amorfa, adaptavel" é o DNA</td></tr>
+            <tr><td>Commitment</td><td style="color: var(--terra);">Este projeto</td><td>Investimento em governança da marca</td></tr>
+            <tr><td>Value</td><td style="color: var(--success);">Comprovado</td><td>Portfolio: Unilever, Google, Coca-Cola, Heineken</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Palavras -->
+      <div class="reveal">
+        <div class="h3" style="margin-bottom: 16px;">Palavras que Definem a Marca</div>
+        <div class="vocab-cloud">
+          <span class="vocab-cloud__word">Ilimitada</span>
+          <span class="vocab-cloud__word">Indefinivel</span>
+          <span class="vocab-cloud__word">Amorfa</span>
+          <span class="vocab-cloud__word">Adaptavel</span>
+          <span class="vocab-cloud__word">Diferente</span>
+          <span class="vocab-cloud__word">Inovadora</span>
+          <span class="vocab-cloud__word">Simples</span>
+          <span class="vocab-cloud__word">Friendly</span>
+          <span class="vocab-cloud__word">Objetiva</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       02 — MANIFESTO (Full-Screen Moment)
+       ═══════════════════════════════════════════ -->
+  <section class="manifesto" id="manifesto">
+    <div class="section__number" style="opacity: 0.03;">02</div>
+    <div class="manifesto__text">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Manifesto</span>
+      </div>
+      <div class="spacer-md"></div>
+      <p class="manifesto__line reveal">UNLMTD não e singular. <em>E plural.</em></p>
+      <p class="manifesto__line reveal">UNLMTD não sou eu. Somos nos. E quanto mais, melhor.</p>
+      <p class="manifesto__line reveal">UNLMTD não tem forma, formato ou formula. <em>E experimentar.</em></p>
+      <p class="manifesto__line reveal">UNLMTD não e fronteira. <em>E portas abertas.</em></p>
+      <p class="manifesto__line reveal">UNLMTD e não acreditar em bala de prata. E na transpiração mesmo.</p>
+      <p class="manifesto__line reveal">UNLMTD não e ouro, prata ou bronze. <em>E mistura.</em></p>
+      <p class="manifesto__line reveal">UNLMTD não e criação. <em>E cocriação.</em></p>
+      <p class="manifesto__line reveal">UNLMTD não e pensar fora da caixa. E não ter caixa, nem rotulos.</p>
+      <p class="manifesto__line reveal">UNLMTD não e pe em cima da mesa. E dançar junto em cima dela.</p>
+      <p class="manifesto__line reveal">UNLMTD não e preconceito. <em>E LGBTQI+</em></p>
+      <p class="manifesto__line reveal">UNLMTD e saber que <em>"Black Lives Matter"</em></p>
+      <p class="manifesto__line reveal">UNLMTD e ser Bruce, ser Lee e ser agua.</p>
+      <p class="manifesto__line reveal">UNLMTD não tem "special ones". <em>E para todo mundo.</em></p>
+      <p class="manifesto__line reveal">UNLMTD e abraço. Daqueles bem apertados.</p>
+      <p class="manifesto__line reveal">UNLMTD e ziriguigum e mojo.</p>
+      <p class="manifesto__line reveal">UNLMTD e um bossa nova, jazz e roda de samba. Tudo junto.</p>
+      <p class="manifesto__line reveal">UNLMTD e um convite a fazer diferente.</p>
+      <p class="manifesto__line reveal" style="color: var(--terra); opacity: 1;">E e um convite para todo mundo.</p>
+    </div>
+  </section>
+
+  <!-- SHAPELESS CREATIVE moment -->
+  <div class="section section--dark shapeless-moment">
+    <div class="reveal">
+      <div class="shapeless-moment__phrase">Shapeless Creative</div>
+      <div class="shapeless-moment__sub">Frase-identidade UNLMTD. Vai em toda peça. Sempre em ingles. Nunca traduzir.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       03 — SISTEMA DE CORES
+       ═══════════════════════════════════════════ -->
+  <section class="section section--cream" id="colors">
+    <div class="section__number">03</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Sistema de Cores</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">Cor com intenção<br>artistica, não<br>decorativa.</h2>
+      <p class="body-lg reveal" style="opacity: 0.6; max-width: 600px; margin-bottom: 64px;">Arquetipo Creator + Outlaw guia todas as decisões de cor. O cream quente contra o preto profundo ja e uma declaração. Referencia cultural: editorial europeu + calor brasileiro.</p>
+
+      <!-- Primary -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Paleta Primaria</div>
+        <div class="terra-line"></div>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #0D0D0D; border: 1px solid rgba(0,0,0,0.15);"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">UNLMTD Black</div>
+              <div class="swatch__hex">#0D0D0D</div>
+              <div class="swatch__use">RGB 13, 13, 13 · Pantone Black 6 C</div>
+              <div class="swatch__use">Fundo principal, tipografia sobre cream, autoridade visual</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #EDE8DC; border: 1px solid rgba(0,0,0,0.1);"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">UNLMTD Cream</div>
+              <div class="swatch__hex">#EDE8DC</div>
+              <div class="swatch__use">RGB 237, 232, 220 · Pantone 9183 C</div>
+              <div class="swatch__use">Fundo secundário, tipografia sobre black, espaço e leveza</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Secondary -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Paleta Secundaria</div>
+        <div class="terra-line"></div>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #C4622D;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Terra</div>
+              <div class="swatch__hex">#C4622D</div>
+              <div class="swatch__use">RGB 196, 98, 45 · Pantone 7526 C</div>
+              <div class="swatch__use">Ceramica artesanal. Samba. Calor humano. O "abraço apertado" do manifesto.</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #C8922A;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Ouro Editorial</div>
+              <div class="swatch__hex">#C8922A</div>
+              <div class="swatch__use">RGB 200, 146, 42 · Pantone 7550 C</div>
+              <div class="swatch__use">Não é o ouro corporativo. E o dourado de um vinil de jazz, de uma encadernação antiga.</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #3D3D3D;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Grafite Medio</div>
+              <div class="swatch__hex">#3D3D3D</div>
+              <div class="swatch__use">RGB 61, 61, 61 · Pantone Cool Gray 11 C</div>
+              <div class="swatch__use">O espaço entre o preto puro é o cream. Funcional, nunca decorativo.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Hierarquia -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Hierarquia de Uso</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Regra</th>
+              <th>Cores</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Sempre</strong></td><td>Black + Cream (identidade core)</td></tr>
+            <tr><td><strong>Pontual</strong> (max 20% da peça)</td><td>Terra ou Ouro Editorial</td></tr>
+            <tr><td><strong>Funcional</strong></td><td>Grafite Medio</td></tr>
+            <tr><td style="color: var(--error);"><strong>Nunca juntos</strong></td><td>Terra + Ouro (colidem)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Acessibilidade -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Acessibilidade (WCAG)</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Combinação</th>
+              <th>Ratio</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Cream sobre Black</td><td>16.8:1</td><td><span class="a11y-badge a11y-badge--aaa">AAA</span></td></tr>
+            <tr><td>Black sobre Cream</td><td>16.8:1</td><td><span class="a11y-badge a11y-badge--aaa">AAA</span></td></tr>
+            <tr><td>Cream sobre Terra</td><td>3.2:1</td><td><span class="a11y-badge a11y-badge--aa">AA texto grande</span></td></tr>
+            <tr><td>Black sobre Ouro</td><td>5.1:1</td><td><span class="a11y-badge a11y-badge--aa">AA</span></td></tr>
+            <tr><td>Cream sobre Grafite</td><td>6.7:1</td><td><span class="a11y-badge a11y-badge--aa">AA</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Semantic Colors -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Cores Semanticas (interface)</div>
+        <p class="body-sm" style="opacity: 0.5; margin-bottom: 24px;">Usadas apenas em contextos funcionais. Nunca em headlines, backgrounds de seção, ou peças de marca.</p>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #22C55E; height: 64px;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Success</div>
+              <div class="swatch__hex">#22C55E</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #EF4444; height: 64px;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Error</div>
+              <div class="swatch__hex">#EF4444</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #F59E0B; height: 64px;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Warning</div>
+              <div class="swatch__hex">#F59E0B</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #3B82F6; height: 64px;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Info</div>
+              <div class="swatch__hex">#3B82F6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Usos Incorretos -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 16px;">Usos Incorretos</div>
+        <ul class="rule-list rule-list--dont">
+          <li>Nunca usar gradientes entre as cores primarias</li>
+          <li>Nunca usar a paleta secundaria como cor dominante</li>
+          <li>Nunca usar mais de 3 cores em uma unica peça</li>
+          <li>Nunca usar o cream como tom "bege generico". Ele tem especificação exata</li>
+          <li>Nunca substituir o black por #000000 puro. O UNLMTD Black tem calor</li>
+          <li>Nunca usar cores semanticas fora de contextos funcionais de interface</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       04 — SISTEMA TIPOGRAFICO
+       ═══════════════════════════════════════════ -->
+  <section class="section section--dark" id="typography">
+    <div class="section__number">04</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Sistema Tipográfico</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">A tipografia comunica<br>antes mesmo<br>de ser lida.</h2>
+      <p class="body-lg reveal" style="opacity: 0.55; max-width: 640px; margin-bottom: 64px;">O contraste entre o serif display ornamental é o sans-serif funcional limpo cria a tensão Creator + Outlaw: sofisticação que se recusa a ser generica.</p>
+
+      <!-- Display Family -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Familia Primaria: Display &amp; Headlines</div>
+        <p class="body-sm" style="opacity: 0.4; margin-bottom: 8px;">Canela Display (Commercial Type) · Fallback: DM Serif Display (Google Fonts)</p>
+        <div class="terra-line"></div>
+
+        <div class="type-demo">
+          <div class="type-demo__row">
+            <span class="type-demo__meta">Display XL</span>
+            <span class="type-demo__size">96px</span>
+            <span class="type-demo__sample display-xl" style="font-size: clamp(2.5rem, 2rem + 3vw, 6rem);">UNLMTD</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">H1</span>
+            <span class="type-demo__size">64px</span>
+            <span class="type-demo__sample h1">Cocriação radical</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">H2</span>
+            <span class="type-demo__size">48px</span>
+            <span class="type-demo__sample h2">Sem caixa, sem rotulos</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">H3</span>
+            <span class="type-demo__size">32px</span>
+            <span class="type-demo__sample h3">E um convite a fazer diferente</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Body Family -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Familia Secundaria: Corpo &amp; Interface</div>
+        <p class="body-sm" style="opacity: 0.4; margin-bottom: 8px;">Neue Haas Grotesk (Monotype) · Fallback: Inter (Google Fonts)</p>
+        <div class="terra-line" style="background: var(--ouro);"></div>
+
+        <div class="type-demo">
+          <div class="type-demo__row">
+            <span class="type-demo__meta">H4</span>
+            <span class="type-demo__size">24px</span>
+            <span class="type-demo__sample h4">Titulos de bloco</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">H5</span>
+            <span class="type-demo__size">20px</span>
+            <span class="type-demo__sample" style="font-size: 1.25rem; font-weight: 500;">Labels e subtitulos</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">Body Large</span>
+            <span class="type-demo__size">18px</span>
+            <span class="type-demo__sample body-lg">Intro de seção, lead paragraph. A gente mergulha no problema antes de qualquer coisa.</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">Body</span>
+            <span class="type-demo__size">16px</span>
+            <span class="type-demo__sample body">Corpo principal de texto. Legivel em qualquer tamanho. Cria o contraste perfeito com o display.</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">Body Small</span>
+            <span class="type-demo__size">14px</span>
+            <span class="type-demo__sample body-sm">Notas, legendas e informações complementares ao conteudo principal.</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">Caption</span>
+            <span class="type-demo__size">12px</span>
+            <span class="type-demo__sample caption">Creditos, rodapes e metadados de peça.</span>
+          </div>
+          <div class="type-demo__row">
+            <span class="type-demo__meta">Label</span>
+            <span class="type-demo__size">11px</span>
+            <span class="type-demo__sample label">UI LABELS, TAGS, CATEGORIAS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Design Tokens -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Design Tokens</div>
+        <div class="responsive-grid responsive-grid--4">
+          <div class="token-card">
+            <div class="token-card__label">Tracking Display</div>
+            <div class="token-card__value">-0.03em</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Tracking Tight</div>
+            <div class="token-card__value">-0.01em</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Tracking Wide</div>
+            <div class="token-card__value">0.05em</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Leading Tight</div>
+            <div class="token-card__value">1.15</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Leading Normal</div>
+            <div class="token-card__value">1.5</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Leading Loose</div>
+            <div class="token-card__value">1.75</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Font Display</div>
+            <div class="token-card__value">400</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Font Body Medium</div>
+            <div class="token-card__value">500</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Rules -->
+      <div class="grid-2 reveal">
+        <div>
+          <div class="h4" style="color: var(--success); margin-bottom: 16px;">Correto</div>
+          <ul class="rule-list rule-list--do">
+            <li>Canela Display para tudo que precisa de impacto visual</li>
+            <li>Neue Haas Grotesk para tudo que precisa ser lido</li>
+            <li>Tracking display: -0.02em a -0.04em (mais condensado = mais luxo)</li>
+            <li>Line-height no body: 1.6 (espaço para respirar)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h4" style="color: var(--error); margin-bottom: 16px;">Incorreto</div>
+          <ul class="rule-list rule-list--dont">
+            <li>Nunca usar Canela em corpo de texto (abaixo de 24px)</li>
+            <li>Nunca usar bold em Neue Haas para simular display</li>
+            <li>Nunca usar mais de 2 familias em uma peça</li>
+            <li>Nunca usar ALL CAPS com Canela ornamental (perde os swashes)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       05 — TOM DE VOZ
+       ═══════════════════════════════════════════ -->
+  <section class="section section--cream" id="tone">
+    <div class="section__number">05</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Tom de Voz</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">Inteligente, quente,<br>honesta e com atitude.</h2>
+      <p class="body-lg reveal" style="opacity: 0.6; max-width: 640px; margin-bottom: 64px;">A UNLMTD fala como fala uma pessoa inteligente, quente, honesta e com atitude. Não precisa impressionar ninguem porque o trabalho ja impressiona. E PT-BR real quando fala com o Brasil. E ingles direto quando fala com o mundo.</p>
+
+      <!-- Core Belief -->
+      <div class="quote-block reveal" style="border-left-color: var(--terra); margin-bottom: 64px;">
+        <p class="quote-block__text" style="color: var(--black);">"Cocriação radical, sem formula, produz trabalho que processos tradicionais não conseguem."</p>
+        <p class="quote-block__attr" style="color: var(--black);">Core Belief (Lee Clow)</p>
+      </div>
+
+      <!-- 8 Principios -->
+      <div class="reveal">
+        <div class="h3" style="color: var(--black); margin-bottom: 32px;">Os 8 Principios de Comunicação</div>
+      </div>
+
+      <div class="grid-2 reveal-stagger" style="margin-bottom: 48px;">
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">1. Plural antes de singular</div>
+          <div class="pillar-card__desc" style="color: var(--black);">A UNLMTD não e "eu". E "a gente". E "we".</div>
+          <div class="pillar-card__voice">"A gente mergulha no problema antes de qualquer coisa"</div>
+        </div>
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">2. Direto sem ser frio</div>
+          <div class="pillar-card__desc" style="color: var(--black);">Vai ao ponto. Mas com calor humano.</div>
+          <div class="pillar-card__voice">"Problema. Analise. Time. Solução."</div>
+        </div>
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">3. Anti-corporativo de verdade</div>
+          <div class="pillar-card__desc" style="color: var(--black);">Sem jargão de agencia. Pode xingar quando e genuino.</div>
+          <div class="pillar-card__voice">"Putting our shit together."</div>
+        </div>
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">4. Curioso, não arrogante</div>
+          <div class="pillar-card__desc" style="color: var(--black);">Convicções fortes, certezas abertas.</div>
+          <div class="pillar-card__voice">"Nada contra caminhos ja trilhados. Nos so resolvemos tentar uma nova forma de andar."</div>
+        </div>
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">5. Brasileiro de verdade</div>
+          <div class="pillar-card__desc" style="color: var(--black);">Referencia culturais genuinas. Sem vergonha de ser de SP.</div>
+          <div class="pillar-card__voice">"E ziriguigum e mojo. E bossa nova, jazz e roda de samba. Tudo junto."</div>
+        </div>
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">6. Sem ego, com personalidade</div>
+          <div class="pillar-card__desc" style="color: var(--black);">Voz forte sem ser pedante.</div>
+          <div class="pillar-card__voice">"Isso e um convite. Não uma promessa vazia."</div>
+        </div>
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">7. Bilingue sem pedir licença</div>
+          <div class="pillar-card__desc" style="color: var(--black);">Portugues e ingles no mesmo folego. Não traduz. Transita.</div>
+          <div class="pillar-card__voice">"When we are shapeless, we can go UNLMTD."</div>
+        </div>
+        <div class="pillar-card reveal" style="border-color: rgba(0,0,0,0.08);">
+          <div class="pillar-card__title" style="color: var(--black);">8. Provocativo quando necessario</div>
+          <div class="pillar-card__desc" style="color: var(--black);">O Outlaw não pede permissão. Cutuca, provoca, desafia.</div>
+          <div class="pillar-card__voice">"Forget big dreams on Powerpoint. Come out with tangible results."</div>
+        </div>
+      </div>
+
+      <!-- Dimensões de Tom -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 32px;">Dimensões de Tom</div>
+        <div style="max-width: 500px;">
+          <div class="dimension">
+            <div class="dimension__labels"><span>Formal</span><span>Casual</span></div>
+            <div class="dimension__bar">
+              <div class="dimension__fill" style="width: 30%;">
+                <div class="dimension__marker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dimension">
+            <div class="dimension__labels"><span>Serio</span><span>Brincalhão</span></div>
+            <div class="dimension__bar">
+              <div class="dimension__fill" style="width: 50%;">
+                <div class="dimension__marker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dimension">
+            <div class="dimension__labels"><span>Respeitoso</span><span>Irreverente</span></div>
+            <div class="dimension__bar">
+              <div class="dimension__fill" style="width: 70%;">
+                <div class="dimension__marker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dimension">
+            <div class="dimension__labels"><span>Direto</span><span>Entusiasmado</span></div>
+            <div class="dimension__bar">
+              <div class="dimension__fill" style="width: 70%;">
+                <div class="dimension__marker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dimension">
+            <div class="dimension__labels"><span>Contido</span><span>Provocativo</span></div>
+            <div class="dimension__bar">
+              <div class="dimension__fill" style="width: 70%;">
+                <div class="dimension__marker"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="border-color: rgba(0,0,0,0.08);"></div>
+
+      <!-- Modulação por Intensidade -->
+      <div class="reveal">
+        <div class="h3" style="color: var(--black); margin-bottom: 32px;">Modulação por Intensidade</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Nivel</th>
+              <th>Onde</th>
+              <th>Tom</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Whisper</strong></td>
+              <td>Footer, legenda, credito</td>
+              <td>Minimo, 2-5 palavras</td>
+              <td style="font-style: italic; opacity: 0.7;">"UNLMTD, 2026."</td>
+            </tr>
+            <tr>
+              <td><strong>Conversa</strong></td>
+              <td>Email, DM, proposta</td>
+              <td>"A gente", quente, humano</td>
+              <td style="font-style: italic; opacity: 0.7;">"Oi, tudo bem? A gente leu o briefing com cuidado."</td>
+            </tr>
+            <tr>
+              <td><strong>Statement</strong></td>
+              <td>Site, apresentação, LinkedIn</td>
+              <td>Confiante, direto</td>
+              <td style="font-style: italic; opacity: 0.7;">"Google, Coca-Cola, Heineken. A gente esteve la."</td>
+            </tr>
+            <tr>
+              <td><strong>Provocação</strong></td>
+              <td>Pitch, storytelling, social</td>
+              <td>Outlaw na frente</td>
+              <td style="font-style: italic; opacity: 0.7;">"WTF is UNLMTD?"</td>
+            </tr>
+            <tr>
+              <td><strong>Manifesto</strong></td>
+              <td>Site, video, keynote</td>
+              <td>Poetico, ritmico, emocional</td>
+              <td style="font-style: italic; opacity: 0.7;">"UNLMTD não e singular. E plural."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider" style="border-color: rgba(0,0,0,0.08);"></div>
+
+      <!-- Vocabulário -->
+      <div class="grid-2 reveal">
+        <div>
+          <div class="h4" style="color: var(--black); margin-bottom: 16px;">Palavras que usamos</div>
+          <div class="vocab-cloud">
+            <span class="vocab-cloud__word">a gente</span>
+            <span class="vocab-cloud__word">junto</span>
+            <span class="vocab-cloud__word">de verdade</span>
+            <span class="vocab-cloud__word">cocriação</span>
+            <span class="vocab-cloud__word">transpirar</span>
+            <span class="vocab-cloud__word">mistura</span>
+            <span class="vocab-cloud__word">experimentar</span>
+            <span class="vocab-cloud__word">fazer diferente</span>
+            <span class="vocab-cloud__word">shapeless</span>
+            <span class="vocab-cloud__word">coolness</span>
+            <span class="vocab-cloud__word">tangible results</span>
+            <span class="vocab-cloud__word">hacking</span>
+            <span class="vocab-cloud__word">thinkers</span>
+            <span class="vocab-cloud__word">doers</span>
+          </div>
+        </div>
+        <div>
+          <div class="h4" style="color: var(--error); margin-bottom: 16px;">Palavras que evitamos</div>
+          <div class="vocab-cloud vocab-cloud--avoid">
+            <span class="vocab-cloud__word">soluções</span>
+            <span class="vocab-cloud__word">inovação</span>
+            <span class="vocab-cloud__word">excelencia</span>
+            <span class="vocab-cloud__word">synergy</span>
+            <span class="vocab-cloud__word">best-in-class</span>
+            <span class="vocab-cloud__word">cutting-edge</span>
+            <span class="vocab-cloud__word">disruptivo</span>
+            <span class="vocab-cloud__word">ecossistema</span>
+            <span class="vocab-cloud__word">stakeholders</span>
+            <span class="vocab-cloud__word">paradigma</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="border-color: rgba(0,0,0,0.08);"></div>
+
+      <!-- 5 Pilares -->
+      <div class="reveal">
+        <div class="h3" style="color: var(--black); margin-bottom: 32px;">Os 5 Pilares da UNLMTD</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Pilar</th>
+              <th>O que e</th>
+              <th>Como fala sobre isso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Forma de Trabalho</strong></td>
+              <td>Flexivel, fluida, adaptavel</td>
+              <td style="font-style: italic; color: var(--terra);">"A gente não tem formula. Tem processo."</td>
+            </tr>
+            <tr>
+              <td><strong>Modelo de Negocio</strong></td>
+              <td>Rede, parceira</td>
+              <td style="font-style: italic; color: var(--terra);">"Plug and play de talento curado."</td>
+            </tr>
+            <tr>
+              <td><strong>Processo</strong></td>
+              <td>Organizada, senior, cocriação</td>
+              <td style="font-style: italic; color: var(--terra);">"Problema. Analise. Time. Solução."</td>
+            </tr>
+            <tr>
+              <td><strong>Status</strong></td>
+              <td>Criativa, design, sofisticada</td>
+              <td style="font-style: italic; color: var(--terra);">"Google, Coca-Cola, Heineken. A gente esteve la."</td>
+            </tr>
+            <tr>
+              <td><strong>Segurança</strong></td>
+              <td>Experiencia de entrega</td>
+              <td style="font-style: italic; color: var(--terra);">"Come out with tangible results."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider" style="border-color: rgba(0,0,0,0.08);"></div>
+
+      <!-- Certo vs Errado -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 24px;">Certo vs. Errado</div>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Situação</th>
+              <th>Errado</th>
+              <th>Certo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Apresentar a empresa</td>
+              <td class="wrong">"Somos uma agencia criativa inovadora"</td>
+              <td class="right">"A gente não sabia o que era UNLMTD. Por isso criamos do zero."</td>
+            </tr>
+            <tr>
+              <td>Falar de processo</td>
+              <td class="wrong">"Nossa metodologia proprietaria garante resultados"</td>
+              <td class="right">"Problema. Analise. Time. Solução. Assim a gente funciona."</td>
+            </tr>
+            <tr>
+              <td>Pitch agressivo</td>
+              <td class="wrong">"Somos diferentes de todas as agencias"</td>
+              <td class="right">"WTF is UNLMTD? We are not an agency."</td>
+            </tr>
+            <tr>
+              <td>Encerrar proposta</td>
+              <td class="wrong">"Ficamos a disposição para quaisquer esclarecimentos"</td>
+              <td class="right">"Qualquer duvida, a gente ta aqui."</td>
+            </tr>
+            <tr>
+              <td>Falar de diversidade</td>
+              <td class="wrong">"Somos uma empresa inclusiva e diversa"</td>
+              <td class="right">"UNLMTD e LGBTQI+. E Black Lives Matter. E para todo mundo."</td>
+            </tr>
+            <tr>
+              <td>Provocar</td>
+              <td class="wrong">"Desafiamos o status quo do mercado"</td>
+              <td class="right">"Hacking the tired marketing agency model."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider" style="border-color: rgba(0,0,0,0.08);"></div>
+
+      <!-- Nomes próprios -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 16px;">Nomes Proprios da Marca (nunca traduzir)</div>
+        <div class="grid-3">
+          <div class="token-card" style="text-align: center;">
+            <div class="token-card__label">Metodologia</div>
+            <div style="font-family: var(--font-display); font-size: 1.25rem; color: var(--black); margin-top: 8px;">THE SEXY BEAST</div>
+          </div>
+          <div class="token-card" style="text-align: center;">
+            <div class="token-card__label">Nome</div>
+            <div style="font-family: var(--font-display); font-size: 1.25rem; color: var(--black); margin-top: 8px;">UNLMTD</div>
+          </div>
+          <div class="token-card" style="text-align: center;">
+            <div class="token-card__label">Proposito</div>
+            <div style="font-family: var(--font-display); font-size: 1.25rem; color: var(--black); margin-top: 8px;">SHARING COOLNESS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       06 — SISTEMA DE SUBMARCAS
+       ═══════════════════════════════════════════ -->
+  <section class="section section--dark" id="submarcas">
+    <div class="section__number">06</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Sistema de Submarcas</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">Branded House com<br>descriptor funcional.</h2>
+      <p class="body-lg reveal" style="opacity: 0.55; max-width: 640px; margin-bottom: 64px;">A UNLMTD é a marca-mãe. As submarcas são extensões funcionais identificadas por: o wordmark real (SVG, sempre identico), uma linha colorida (cor unica por vertical) e um descriptor em texto.</p>
+
+      <!-- Lockups Vertical -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Layout Vertical (padrão)</div>
+        <div class="terra-line"></div>
+      </div>
+
+      <div class="submarca-grid reveal-stagger">
+        <!-- UNLMTD Video -->
+        <div class="lockup reveal">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="lockup__wordmark">
+          <div class="lockup__line" style="background: var(--video-color);"></div>
+          <div class="lockup__descriptor">Video</div>
+        </div>
+        <!-- UNLMTD Digital -->
+        <div class="lockup reveal">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="lockup__wordmark">
+          <div class="lockup__line" style="background: var(--digital-color);"></div>
+          <div class="lockup__descriptor">Digital</div>
+        </div>
+        <!-- UNLMTD IA -->
+        <div class="lockup reveal">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="lockup__wordmark">
+          <div class="lockup__line" style="background: var(--ia-color);"></div>
+          <div class="lockup__descriptor">IA</div>
+        </div>
+        <!-- UNLMTD Branding -->
+        <div class="lockup reveal">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="lockup__wordmark">
+          <div class="lockup__line" style="background: var(--branding-color);"></div>
+          <div class="lockup__descriptor">Branding</div>
+        </div>
+        <!-- UNLMTD Music -->
+        <div class="lockup reveal">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="lockup__wordmark">
+          <div class="lockup__line" style="background: var(--music-color);"></div>
+          <div class="lockup__descriptor">Music</div>
+        </div>
+        <!-- UNLMTD Strategy -->
+        <div class="lockup reveal">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="lockup__wordmark">
+          <div class="lockup__line" style="background: var(--strategy-color);"></div>
+          <div class="lockup__descriptor">Strategy</div>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Cores por Vertical -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Cores por Vertical</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Vertical</th>
+              <th>Cor</th>
+              <th>Hex</th>
+              <th>Conceito</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Video</td>
+              <td><span style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background: #C4622D; vertical-align: middle; margin-right: 8px;"></span>Terra</td>
+              <td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">#C4622D</td>
+              <td>Calor, produção, craft</td>
+            </tr>
+            <tr>
+              <td>Digital</td>
+              <td><span style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background: #C8922A; vertical-align: middle; margin-right: 8px;"></span>Ouro</td>
+              <td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">#C8922A</td>
+              <td>Premium, tecnologia, entrega</td>
+            </tr>
+            <tr>
+              <td>IA</td>
+              <td><span style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background: #3B82F6; vertical-align: middle; margin-right: 8px;"></span>Blue</td>
+              <td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">#3B82F6</td>
+              <td>Inteligencia, futuro, precisão</td>
+            </tr>
+            <tr>
+              <td>Branding</td>
+              <td><span style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background: rgba(237,232,220,0.4); border: 1px solid rgba(237,232,220,0.2); vertical-align: middle; margin-right: 8px;"></span>Cream 40%</td>
+              <td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">rgba(237,232,220,0.4)</td>
+              <td>Neutro, fundação, identidade</td>
+            </tr>
+            <tr>
+              <td>Music</td>
+              <td><span style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background: #9333EA; vertical-align: middle; margin-right: 8px;"></span>Purple</td>
+              <td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">#9333EA</td>
+              <td>Expressão, criatividade, som</td>
+            </tr>
+            <tr>
+              <td>Strategy</td>
+              <td><span style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background: #22C55E; vertical-align: middle; margin-right: 8px;"></span>Green</td>
+              <td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">#22C55E</td>
+              <td>Crescimento, direção, resultado</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Horizontal layout -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Layout Horizontal (headers, assinaturas, nav)</div>
+        <div class="terra-line" style="background: var(--ouro);"></div>
+        <div class="spacer-md"></div>
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <div class="lockup--h" style="display: inline-flex; align-items: center; gap: 16px; padding: 16px 24px; border: 1px solid rgba(237,232,220,0.06); border-radius: 8px;">
+            <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" style="height: 24px; filter: brightness(0) invert(1);">
+            <span style="display: inline-block; width: 40px; height: 2px; background: var(--video-color);"></span>
+            <span style="font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85;">Video</span>
+          </div>
+          <div class="lockup--h" style="display: inline-flex; align-items: center; gap: 16px; padding: 16px 24px; border: 1px solid rgba(237,232,220,0.06); border-radius: 8px;">
+            <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" style="height: 24px; filter: brightness(0) invert(1);">
+            <span style="display: inline-block; width: 40px; height: 2px; background: var(--digital-color);"></span>
+            <span style="font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85;">Digital</span>
+          </div>
+          <div class="lockup--h" style="display: inline-flex; align-items: center; gap: 16px; padding: 16px 24px; border: 1px solid rgba(237,232,220,0.06); border-radius: 8px;">
+            <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" style="height: 24px; filter: brightness(0) invert(1);">
+            <span style="display: inline-block; width: 40px; height: 2px; background: var(--ia-color);"></span>
+            <span style="font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85;">IA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Assinatura institucional -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Assinatura Institucional</div>
+        <div style="display: inline-flex; align-items: center; gap: 16px; padding: 24px 40px; border: 1px solid rgba(237,232,220,0.08); border-radius: 12px; background: rgba(237,232,220,0.02);">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" style="height: 28px; filter: brightness(0) invert(1);">
+          <span style="display: inline-block; width: 48px; height: 2px; background: var(--terra);"></span>
+          <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra);">Shapeless Creative</span>
+        </div>
+        <p class="body-sm" style="opacity: 0.4; margin-top: 16px;">A assinatura "SHAPELESS CREATIVE" substitui o descriptor quando a marca-mãe aparece sem submarca.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Especificações -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Especificações Tecnicas</div>
+        <div class="responsive-grid responsive-grid--4">
+          <div class="token-card">
+            <div class="token-card__label">Wordmark Full</div>
+            <div class="token-card__value">48px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Wordmark Default</div>
+            <div class="token-card__value">36px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Wordmark Compact</div>
+            <div class="token-card__value">24px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Wordmark Minimum</div>
+            <div class="token-card__value">16px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Linha</div>
+            <div class="token-card__value">2px x 80px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Gap WM / Linha</div>
+            <div class="token-card__value">16px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Descriptor Font</div>
+            <div class="token-card__value">Inter 600, 15px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Descriptor Tracking</div>
+            <div class="token-card__value">0.2em</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Don'ts -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--error); margin-bottom: 16px;">Usos Incorretos</div>
+        <ul class="rule-list rule-list--dont">
+          <li>Nunca mudar o fundo para a cor da vertical</li>
+          <li>Nunca mudar a cor do wordmark (além de cream/black nos dois modos)</li>
+          <li>Nunca usar o descriptor sem a linha separadora</li>
+          <li>Nunca mudar a posição relativa (wordmark sempre acima do descriptor)</li>
+          <li>Nunca usar mais de uma cor de linha na mesma peça</li>
+          <li>Nunca usar o descriptor maior que o wordmark</li>
+          <li>Nunca recriar o wordmark em fonte (sempre SVG)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       07 — MOTION GUIDELINES
+       ═══════════════════════════════════════════ -->
+  <section class="section section--cream" id="motion">
+    <div class="section__number">07</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Motion Guidelines</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">Cada animação<br>tem proposito.</h2>
+      <p class="body-lg reveal" style="opacity: 0.6; max-width: 640px; margin-bottom: 64px;">A UNLMTD se move como cria: com intenção, craft e ritmo. Nunca apressada. Nunca decorativa. Creator: movimento artesanal, preciso, revelador. Outlaw: timing inesperado, ritmo que quebra monotonia.</p>
+
+      <!-- Timing System -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 32px;">Timing System</div>
+
+        <div class="motion-bar">
+          <span class="motion-bar__label">Micro</span>
+          <div class="motion-bar__track" style="background: rgba(0,0,0,0.06);">
+            <div class="motion-bar__fill" style="width: 12.5%;"></div>
+          </div>
+          <span class="motion-bar__time">100ms</span>
+        </div>
+
+        <div class="motion-bar">
+          <span class="motion-bar__label">Small</span>
+          <div class="motion-bar__track" style="background: rgba(0,0,0,0.06);">
+            <div class="motion-bar__fill" style="width: 25%;"></div>
+          </div>
+          <span class="motion-bar__time">200ms</span>
+        </div>
+
+        <div class="motion-bar">
+          <span class="motion-bar__label">Medium</span>
+          <div class="motion-bar__track" style="background: rgba(0,0,0,0.06);">
+            <div class="motion-bar__fill" style="width: 43.75%;"></div>
+          </div>
+          <span class="motion-bar__time">350ms</span>
+        </div>
+
+        <div class="motion-bar">
+          <span class="motion-bar__label">Large</span>
+          <div class="motion-bar__track" style="background: rgba(0,0,0,0.06);">
+            <div class="motion-bar__fill" style="width: 62.5%;"></div>
+          </div>
+          <span class="motion-bar__time">500ms</span>
+        </div>
+
+        <div class="motion-bar">
+          <span class="motion-bar__label">Cinematic</span>
+          <div class="motion-bar__track" style="background: rgba(0,0,0,0.06);">
+            <div class="motion-bar__fill" style="width: 100%;"></div>
+          </div>
+          <span class="motion-bar__time">800ms+</span>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Easing -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 24px;">Easing</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Curva</th>
+              <th>Quando</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Standard</strong></td><td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">ease-out (0.0, 0.0, 0.2, 1.0)</td><td>Padrão para tudo</td></tr>
+            <tr><td><strong>Enter</strong></td><td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">ease-out (0.0, 0.0, 0.2, 1.0)</td><td>Elementos chegando</td></tr>
+            <tr><td><strong>Exit</strong></td><td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">ease-in (0.4, 0.0, 1.0, 1.0)</td><td>Elementos saindo</td></tr>
+            <tr><td><strong>Emphasis</strong></td><td style="font-family: 'Inter', monospace; font-size: 0.8125rem;">cubic-bezier(0.2, 0.0, 0.0, 1.0)</td><td>Momentos de destaque</td></tr>
+          </tbody>
+        </table>
+        <p class="body-sm" style="color: var(--error); margin-top: 16px; opacity: 0.8;">Regra: nunca ease-in-out (parece lento e indeciso). Prefira ease-out (chega rapido, desacelera com graça).</p>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Animation Patterns -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 24px;">Padrões de Animação</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Padrão</th>
+              <th>Duração</th>
+              <th>Easing</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Fade In Up</strong></td><td>350ms</td><td>ease-out</td><td>Padrão de entrada. translateY(16px) + opacity</td></tr>
+            <tr><td><strong>Logo Reveal</strong></td><td>800ms</td><td>emphasis</td><td>Linhas do simbolo se desenham de dentro para fora</td></tr>
+            <tr><td><strong>Wordmark Reveal</strong></td><td>600ms</td><td>emphasis</td><td>Mascara horizontal, esquerda para direita</td></tr>
+            <tr><td><strong>Linha de Submarca</strong></td><td>300ms</td><td>ease-out</td><td>Cresce do centro para as bordas</td></tr>
+            <tr><td><strong>Hover Botão</strong></td><td>200ms</td><td>ease-out</td><td>Scale sutil (1.02). Nunca 1.05+</td></tr>
+            <tr><td><strong>Page Transition</strong></td><td>350ms</td><td>ease-out</td><td>Fade in + translateY(8px). Nunca slide lateral</td></tr>
+            <tr><td><strong>Scroll Reveal</strong></td><td>350ms</td><td>ease-out</td><td>fadeInUp ao entrar viewport. Anima uma vez so</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Coreografia -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 24px;">Coreografia e Stagger</div>
+        <div class="responsive-grid responsive-grid--4">
+          <div class="token-card">
+            <div class="token-card__label">Stagger Delay</div>
+            <div class="token-card__value">50ms</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Max Stagger</div>
+            <div class="token-card__value">8 elementos</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Reveal Distance</div>
+            <div class="token-card__value">16px</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">Reveal Threshold</div>
+            <div class="token-card__value">20%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="border-color: rgba(0,0,0,0.08);"></div>
+
+      <!-- Rules -->
+      <div class="grid-2 reveal">
+        <div>
+          <div class="h4" style="color: var(--success); margin-bottom: 16px;">Correto</div>
+          <ul class="rule-list rule-list--do">
+            <li>Toda animação tem proposito (revelar, guiar, celebrar)</li>
+            <li>Motion segue hierarquia visual (o mais importante anima primeiro)</li>
+            <li>Respeitar prefers-reduced-motion</li>
+            <li>Timing consistente (usar os 5 niveis, não inventar)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h4" style="color: var(--error); margin-bottom: 16px;">Incorreto</div>
+          <ul class="rule-list rule-list--dont">
+            <li>Nunca animar sem proposito (decoração e ruido)</li>
+            <li>Nunca bounce ou elastic (não combina com Creator + Outlaw)</li>
+            <li>Nunca parallax excessivo (distrai do conteudo)</li>
+            <li>Nunca auto-play em videos (Outlaw respeita a escolha do visitante)</li>
+            <li>Nunca animação infinita em loop (exceto loading spinner)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       08 — BANCO DE HEADLINES
+       ═══════════════════════════════════════════ -->
+  <section class="section section--dark" id="headlines">
+    <div class="section__number">08</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Banco de Headlines</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">Uma ideia por frase.<br>Quebra de linha<br>por sentido.</h2>
+      <p class="body-lg reveal" style="opacity: 0.55; max-width: 600px; margin-bottom: 64px;">Cada headline da UNLMTD segue 3 regras: uma ideia por frase, quebra de linha por sentido (cada linha e uma unidade de pensamento), e tom "a gente" (plural, quente, anti-corporativo, brasileiro).</p>
+
+      <!-- Site -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Site</div>
+        <div class="terra-line"></div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Homepage H1</div>
+        <div class="headline-card__text">A gente não sabia o que era UNLMTD.<br>Por isso criamos do zero.</div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Serviços</div>
+        <div class="headline-card__text">Problema. Analise. Time. Solução.<br>Assim a gente funciona.</div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Clientes</div>
+        <div class="headline-card__text">Google, Coca-Cola, Heineken.<br>A gente esteve la.</div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Sobre</div>
+        <div class="headline-card__text">UNLMTD não e singular. E plural.<br>Não e eu. E a gente.<br>E quanto mais, melhor.</div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Manifesto (curto)</div>
+        <div class="headline-card__text">A gente não acredita em bala de prata.<br>E na transpiração mesmo.</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Apresentação -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Apresentação Institucional</div>
+        <div class="terra-line" style="background: var(--ouro);"></div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Capa</div>
+        <div class="headline-card__text">Isso não e uma proposta.<br>E um convite.</div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Abertura anti-headline</div>
+        <div class="headline-card__text">Aqui deveria entrar um texto daqueles sedutores,<br>super motivador, falando como a gente e incrivel<br>e os unicos capazes de fazer um trabalho diferente.<br>Bom, mas isso e tão mais do mesmo, ne?</div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Slide de processo</div>
+        <div class="headline-card__text">Antes de propor qualquer coisa,<br>a gente mergulha no problema.<br>Não pra parecer ocupado.<br>Pra entender de verdade.</div>
+      </div>
+
+      <div class="headline-card reveal">
+        <div class="headline-card__context">Encerramento</div>
+        <div class="headline-card__text">Qualquer duvida, a gente ta aqui.<br>Sem formalidade. Sem protocolo.<br>E so chamar.</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Social Media -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Social Media</div>
+        <div class="terra-line"></div>
+      </div>
+
+      <div class="grid-2 reveal-stagger">
+        <div class="headline-card reveal">
+          <div class="headline-card__context">Instagram Feed</div>
+          <div class="headline-card__text" style="font-size: clamp(1.125rem, 0.8rem + 1vw, 1.5rem);">Quando a gente muda o processo<br>pra melhorar o resultado,<br>a gente pode ir UNLMTD.</div>
+        </div>
+
+        <div class="headline-card reveal">
+          <div class="headline-card__context">Instagram Feed</div>
+          <div class="headline-card__text" style="font-size: clamp(1.125rem, 0.8rem + 1vw, 1.5rem);">Sem caixa, sem rotulos.<br>Sem formula.<br>E experimentar.</div>
+        </div>
+
+        <div class="headline-card reveal">
+          <div class="headline-card__context">Instagram Dado</div>
+          <div class="headline-card__text" style="font-size: clamp(1.125rem, 0.8rem + 1vw, 1.5rem);">47 projetos em 2025.<br>Zero feitos do mesmo jeito.</div>
+        </div>
+
+        <div class="headline-card reveal">
+          <div class="headline-card__context">Instagram Dado</div>
+          <div class="headline-card__text" style="font-size: clamp(1.125rem, 0.8rem + 1vw, 1.5rem);">4 Leões em Cannes.<br>Nenhum seguindo manual.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Páginas Especiais -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Paginas Especiais</div>
+        <div class="terra-line" style="background: var(--ouro);"></div>
+      </div>
+
+      <div class="grid-3 reveal-stagger">
+        <div class="headline-card reveal">
+          <div class="headline-card__context">404</div>
+          <div class="headline-card__text" style="font-size: 1.25rem;">A gente foi longe demais.<br>Essa pagina não existe.</div>
+        </div>
+        <div class="headline-card reveal">
+          <div class="headline-card__context">Loading</div>
+          <div class="headline-card__text" style="font-size: 1.25rem;">A gente ta preparando tudo.<br>Um segundo.</div>
+        </div>
+        <div class="headline-card reveal">
+          <div class="headline-card__context">Recrutamento</div>
+          <div class="headline-card__text" style="font-size: 1.25rem;">Sem caixa, sem rotulos.<br>Sem vagas também.<br>Tem convites.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       09 — DIGITAL & RESPONSIVE
+       ═══════════════════════════════════════════ -->
+  <section class="section section--cream" id="digital">
+    <div class="section__number">09</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Digital &amp; Responsive</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">Um sistema que<br>funciona em<br>qualquer tela.</h2>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Responsive Mark -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 24px;">Responsive Mark System</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Variante</th>
+              <th>Altura</th>
+              <th>Contexto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Full</strong></td><td>48px+</td><td>Hero, capa, poster, apresentação</td></tr>
+            <tr><td><strong>Default</strong></td><td>36px</td><td>Header de site, cards</td></tr>
+            <tr><td><strong>Compact</strong></td><td>24px</td><td>Nav, assinatura de email, mobile header</td></tr>
+            <tr><td><strong>Minimum</strong></td><td>16px</td><td>Favicon fallback, menções inline</td></tr>
+          </tbody>
+        </table>
+        <p class="body-sm" style="opacity: 0.5; margin-top: 16px;">Regra: abaixo de 24px, remover a linha é o descriptor. Usar apenas o wordmark ou o simbolo infinito.</p>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Breakpoints -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 24px;">Breakpoints</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Largura</th>
+              <th>Colunas</th>
+              <th>Margem</th>
+              <th>Gutter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Mobile</strong></td><td>&lt;768px</td><td>4</td><td>16px</td><td>16px</td></tr>
+            <tr><td><strong>Tablet</strong></td><td>768-1024px</td><td>8</td><td>24px</td><td>24px</td></tr>
+            <tr><td><strong>Desktop</strong></td><td>1025-1440px</td><td>12</td><td>32px</td><td>24px</td></tr>
+            <tr><td><strong>Wide</strong></td><td>&gt;1440px</td><td>12</td><td>auto (max 1280px)</td><td>24px</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Responsive Typography -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 24px;">Responsive Typography Scale</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Desktop</th>
+              <th>Tablet</th>
+              <th>Mobile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>display-xl</td><td>96px</td><td>64px</td><td>48px</td></tr>
+            <tr><td>h1</td><td>64px</td><td>48px</td><td>36px</td></tr>
+            <tr><td>h2</td><td>48px</td><td>36px</td><td>28px</td></tr>
+            <tr><td>h3</td><td>32px</td><td>28px</td><td>24px</td></tr>
+            <tr><td>h4</td><td>24px</td><td>22px</td><td>20px</td></tr>
+            <tr><td>body-lg</td><td>18px</td><td>18px</td><td>17px</td></tr>
+            <tr><td>body</td><td>16px</td><td>16px</td><td>16px</td></tr>
+            <tr><td>body-sm</td><td>14px</td><td>14px</td><td>14px</td></tr>
+            <tr><td>caption</td><td>12px</td><td>12px</td><td>12px</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Dark vs Cream Pages -->
+      <div class="reveal">
+        <div class="h4" style="color: var(--black); margin-bottom: 8px;">Alternancia Editorial: Dark vs Cream</div>
+        <p class="body-sm" style="opacity: 0.5; margin-bottom: 24px;">A UNLMTD não tem "dark mode toggle". Tem alternancia editorial entre paginas dark e cream.</p>
+        <div class="grid-2">
+          <div>
+            <div style="padding: 32px; background: #0D0D0D; border-radius: 12px; color: #EDE8DC; margin-bottom: 16px;">
+              <div class="label" style="color: var(--terra); margin-bottom: 16px;">Dark Page (padrão)</div>
+              <div style="font-size: 0.875rem; line-height: 1.8; opacity: 0.6;">
+                Background: #0D0D0D<br>
+                Text: #EDE8DC<br>
+                Links: #C4622D<br>
+                Borders: rgba(237,232,220,0.08)
+              </div>
+            </div>
+            <p class="body-sm" style="opacity: 0.5;">Usar em: Homepage, Cases/Portfolio, Blog (alternado)</p>
+          </div>
+          <div>
+            <div style="padding: 32px; background: #EDE8DC; border-radius: 12px; color: #0D0D0D; margin-bottom: 16px; border: 1px solid rgba(0,0,0,0.08);">
+              <div class="label" style="color: var(--terra); margin-bottom: 16px;">Cream Page</div>
+              <div style="font-size: 0.875rem; line-height: 1.8; opacity: 0.6;">
+                Background: #EDE8DC<br>
+                Text: #0D0D0D<br>
+                Links: #C4622D<br>
+                Borders: rgba(13,13,13,0.08)
+              </div>
+            </div>
+            <p class="body-sm" style="opacity: 0.5;">Usar em: Sobre/Manifesto, Contato, Blog (alternado)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <!-- Touch & Performance -->
+      <div class="grid-2 reveal">
+        <div>
+          <div class="h4" style="color: var(--black); margin-bottom: 16px;">Touch Targets</div>
+          <ul class="rule-list rule-list--do">
+            <li>Minimo: 44x44px (WCAG)</li>
+            <li>Botões: padding 16px 32px minimo</li>
+            <li>Links em texto: line-height 1.5 minimo</li>
+            <li>Icones clicaveis: 44px hitarea mesmo se icone menor</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h4" style="color: var(--black); margin-bottom: 16px;">Performance</div>
+          <ul class="rule-list rule-list--do">
+            <li>Fontes: preload Canela Display + Neue Haas</li>
+            <li>Imagens: WebP com fallback JPG, lazy loading</li>
+            <li>SVG: inline para icones, img para wordmark</li>
+            <li>Maximo: 3 requests de fonte, 1 CSS, 1 JS bundle</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       10 — DIREÇÃO DE FOTOGRAFIA
+       ═══════════════════════════════════════════ -->
+  <section class="section section--dark" id="photography">
+    <div class="section__number">10</div>
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__dot"></span>
+        <span class="section-label__text">Direção de Fotografia</span>
+      </div>
+
+      <h2 class="display-xl reveal" style="margin-bottom: 16px;">Pessoas reais,<br>em processo real,<br>criando de verdade.</h2>
+      <p class="body-lg reveal" style="opacity: 0.55; max-width: 640px; margin-bottom: 64px;">A fotografia reflete a cocriação: nunca stock, nunca posado, nunca estúdio artificial. A tipografia é a estrela. A foto é o contexto.</p>
+
+      <!-- P&B Editorial -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 8px;">Estilo Principal: P&amp;B Editorial</div>
+        <div class="terra-line"></div>
+        <div class="spacer-sm"></div>
+        <div class="grid-2">
+          <div>
+            <p class="label" style="color: var(--terra); margin-bottom: 12px;">Por que preto e branco?</p>
+            <ul class="rule-list rule-list--do">
+              <li>Coerencia com a paleta black/cream da marca</li>
+              <li>Foco na ação, não na decoração</li>
+              <li>Atemporalidade (P&amp;B não data)</li>
+              <li>Contraste editorial (como uma revista de design)</li>
+              <li>Quando cor aparece, e intencional (apenas Terra ou Ouro)</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label" style="color: var(--terra); margin-bottom: 12px;">Tratamento</p>
+            <ul class="rule-list rule-list--do">
+              <li>Contraste alto (blacks profundos, whites limpos)</li>
+              <li>Granulação minima (limpo, não vintage)</li>
+              <li>Sem filtros Instagram, sem presets trendy</li>
+              <li>Exposição levemente overexposed nos highlights (cream feeling)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Direção por contexto -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Direção por Contexto</div>
+        <table class="brand-table">
+          <thead>
+            <tr>
+              <th>Contexto</th>
+              <th>Direção</th>
+              <th>Detalhes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bastidores / Processo</strong></td>
+              <td>Pessoas trabalhando juntas</td>
+              <td>Mesa, quadro branco, mãos em close, luz natural de janela</td>
+            </tr>
+            <tr>
+              <td><strong>Retratos / Equipe</strong></td>
+              <td>Fundo neutro, P&amp;B</td>
+              <td>Busto ou 3/4, expressão confiante mas acessivel, olhar direto</td>
+            </tr>
+            <tr>
+              <td><strong>Cases / Portfolio</strong></td>
+              <td>Produto em contexto real</td>
+              <td>Tela real, device real, nunca mockup 3D generico</td>
+            </tr>
+            <tr>
+              <td><strong>Eventos / Cultura</strong></td>
+              <td>Espontaneo</td>
+              <td>Wide angle para espaço, close para emoção</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Enquadramentos -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 24px;">Enquadramentos Aprovados</div>
+        <div class="responsive-grid responsive-grid--4" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+          <div class="token-card" style="text-align: center;">
+            <div style="width: 100%; aspect-ratio: 3/2; background: rgba(237,232,220,0.04); border-radius: 4px; margin-bottom: 12px;"></div>
+            <div class="token-card__label">Paisagem editorial</div>
+            <div class="token-card__value">3:2</div>
+          </div>
+          <div class="token-card" style="text-align: center;">
+            <div style="width: 80%; margin: 0 auto; aspect-ratio: 1/1; background: rgba(237,232,220,0.04); border-radius: 4px; margin-bottom: 12px;"></div>
+            <div class="token-card__label">Quadrado</div>
+            <div class="token-card__value">1:1</div>
+          </div>
+          <div class="token-card" style="text-align: center;">
+            <div style="width: 56%; margin: 0 auto; aspect-ratio: 9/16; background: rgba(237,232,220,0.04); border-radius: 4px; margin-bottom: 12px;"></div>
+            <div class="token-card__label">Stories</div>
+            <div class="token-card__value">9:16</div>
+          </div>
+          <div class="token-card" style="text-align: center;">
+            <div style="width: 100%; aspect-ratio: 2.35/1; background: rgba(237,232,220,0.04); border-radius: 4px; margin-bottom: 12px;"></div>
+            <div class="token-card__label">Wide cinematic</div>
+            <div class="token-card__value">2.35:1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Cor excepcional -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 16px;">Cor (uso excepcional)</div>
+        <div class="grid-2">
+          <ul class="rule-list rule-list--do">
+            <li>Desaturada: -30% saturação, contraste +10%</li>
+            <li>Temperatura quente: +5% em direção ao amber/terra</li>
+            <li>Nunca vibrante: a cor e um sussurro, não um grito</li>
+            <li>Reservada para bastidores informais, stories, behind-the-scenes</li>
+          </ul>
+          <div>
+            <div class="h4" style="color: var(--error); margin-bottom: 16px;">O que nunca fotografar</div>
+            <ul class="rule-list rule-list--dont">
+              <li>Stock photos genericas</li>
+              <li>Fotos com diversidade forçada</li>
+              <li>Estudio com fundo infinito branco</li>
+              <li>Selfies ou fotos casuais demais</li>
+              <li>Fotos saturadas ou com filtros coloridos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Layout foto + texto -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 16px;">Relação Foto + Tipografia</div>
+        <p class="body" style="opacity: 0.7; margin-bottom: 16px;">A fotografia da UNLMTD nunca compete com a tipografia. A tipografia é a estrela. A foto é o contexto.</p>
+        <div class="grid-2">
+          <div>
+            <ul class="rule-list rule-list--do">
+              <li>Overlay: black 40-60% sobre foto + texto cream</li>
+              <li>Ou: foto em metade da composição, texto na outra</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="rule-list rule-list--dont">
+              <li>Nunca texto sobre foto sem overlay (ilegivel)</li>
+              <li>Nunca foto como background com texto centralizado (generico)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Banco prioritário -->
+      <div class="reveal">
+        <div class="h4" style="margin-bottom: 16px;">Banco de Imagens Prioritario</div>
+        <p class="body-sm" style="opacity: 0.4; margin-bottom: 24px;">Fotos que a UNLMTD precisa produzir:</p>
+        <div class="responsive-grid responsive-grid--4" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+          <div class="token-card">
+            <div class="token-card__label">01</div>
+            <div style="font-size: 0.875rem; margin-top: 4px;">Equipe trabalhando junto (3-5 fotos, P&amp;B)</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">02</div>
+            <div style="font-size: 0.875rem; margin-top: 4px;">David Levy retrato (2-3 poses, P&amp;B editorial)</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">03</div>
+            <div style="font-size: 0.875rem; margin-top: 4px;">Espaço de trabalho (2-3 angulos, P&amp;B)</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">04</div>
+            <div style="font-size: 0.875rem; margin-top: 4px;">Cases em contexto real (1 por case principal)</div>
+          </div>
+          <div class="token-card">
+            <div class="token-card__label">05</div>
+            <div style="font-size: 0.875rem; margin-top: 4px;">Detalhes de craft: mãos, tela, caderno (5-8 fotos)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 11 — TEMPLATES DE SOCIAL MEDIA
+       ═══════════════════════════════════════════ -->
+  <section class="section section--dark" id="social-templates" style="padding:120px 0;">
+    <div class="container">
+      <div style="font-family:var(--font-display); font-size:200px; opacity:0.04; position:absolute; left:32px; top:80px; line-height:1; pointer-events:none;">11</div>
+      <h2 style="font-family:var(--font-display); font-size:48px; margin-bottom:8px;">Templates de Social Media</h2>
+      <p style="font-size:14px; color:rgba(237,232,220,0.4); margin-bottom:64px;">Aplicações reais da marca em Instagram, LinkedIn e Stories.</p>
+
+      <h3 style="font-family:var(--font-display); font-size:24px; margin-bottom:24px;">Instagram Feed: Editorial Dark (1080x1350)</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:64px;">
+        <div style="background:#0D0D0D; border:1px solid rgba(237,232,220,0.08); border-radius:8px; padding:48px 32px; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:space-between;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; width:fit-content;" alt="UNLMTD">
+          <div style="font-family:var(--font-display); font-size:28px; line-height:1.2;">A gente não sabia<br>o que era UNLMTD.<br>Por isso criamos do zero.</div>
+          <div style="width:60px; height:2px; background:var(--terra);"></div>
+        </div>
+        <div style="background:#0D0D0D; border:1px solid rgba(237,232,220,0.08); border-radius:8px; padding:48px 32px; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:space-between;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; width:fit-content;" alt="UNLMTD">
+          <div style="font-family:var(--font-display); font-size:28px; line-height:1.2;">Sem caixa,<br>sem rótulos.<br>Sem fórmula.<br>É experimentar.</div>
+          <div style="width:60px; height:2px; background:var(--terra);"></div>
+        </div>
+        <div style="background:#0D0D0D; border:1px solid rgba(237,232,220,0.08); border-radius:8px; padding:48px 32px; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:space-between;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; width:fit-content;" alt="UNLMTD">
+          <div><div style="font-family:var(--font-display); font-size:72px; line-height:1;">47</div><div style="width:40px; height:2px; background:var(--terra); margin:16px 0;"></div><div style="font-size:16px; color:rgba(237,232,220,0.7); line-height:1.5;">projetos em 2025.<br>Zero feitos do mesmo jeito.</div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-display); font-size:24px; margin-bottom:24px;">Instagram Feed: Editorial Cream (1080x1350)</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:64px;">
+        <div style="background:#EDE8DC; color:#0D0D0D; border-radius:8px; padding:48px 32px; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:space-between;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; width:fit-content; filter:brightness(0);" alt="UNLMTD">
+          <div style="font-family:var(--font-display); font-size:28px; line-height:1.2; color:#0D0D0D;">Cocriação não é moda.<br>É como a gente funciona<br>desde o dia 1.</div>
+          <div style="width:60px; height:2px; background:var(--terra);"></div>
+        </div>
+        <div style="background:#EDE8DC; color:#0D0D0D; border-radius:8px; padding:48px 32px; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:space-between;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; width:fit-content; filter:brightness(0);" alt="UNLMTD">
+          <div style="font-family:var(--font-display); font-size:28px; line-height:1.2; color:#0D0D0D;">Problema. Análise.<br>Time. Solução.<br>Assim a gente funciona.</div>
+          <div style="width:60px; height:2px; background:var(--terra);"></div>
+        </div>
+        <div style="background:#EDE8DC; color:#0D0D0D; border-radius:8px; padding:48px 32px; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:space-between;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; width:fit-content; filter:brightness(0);" alt="UNLMTD">
+          <div style="font-family:var(--font-display); font-size:28px; line-height:1.2; color:#0D0D0D;">Google, Coca-Cola,<br>Heineken.<br>A gente esteve lá.</div>
+          <div style="width:60px; height:2px; background:var(--terra);"></div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-display); font-size:24px; margin-bottom:24px;">Stories (1080x1920)</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:64px;">
+        <div style="background:#0D0D0D; border:1px solid rgba(237,232,220,0.08); border-radius:12px; padding:40px 24px; aspect-ratio:9/16; display:flex; flex-direction:column; justify-content:space-between; align-items:center; text-align:center; max-height:480px;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; margin-top:16px;" alt="UNLMTD">
+          <div style="font-family:var(--font-display); font-style:italic; font-size:22px; line-height:1.3;">"UNLMTD não é singular.<br>É plural."</div>
+          <div style="background:var(--terra); color:var(--cream); padding:12px 32px; border-radius:36px; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">SAIBA MAIS</div>
+        </div>
+        <div style="background:#EDE8DC; color:#0D0D0D; border-radius:12px; padding:40px 24px; aspect-ratio:9/16; display:flex; flex-direction:column; justify-content:space-between; align-items:center; text-align:center; max-height:480px;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; filter:brightness(0); margin-top:16px;" alt="UNLMTD">
+          <div style="font-family:var(--font-display); font-size:22px; line-height:1.3; color:#0D0D0D;">When we are shapeless,<br>we can go UNLMTD.</div>
+          <div style="background:var(--terra); color:var(--cream); padding:12px 32px; border-radius:36px; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">CONHEÇA</div>
+        </div>
+        <div style="background:#0D0D0D; border:1px solid rgba(237,232,220,0.08); border-radius:12px; padding:40px 24px; aspect-ratio:9/16; display:flex; flex-direction:column; justify-content:space-between; align-items:center; text-align:center; max-height:480px;">
+          <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; margin-top:16px;" alt="UNLMTD">
+          <div><div style="font-family:var(--font-display); font-size:56px; line-height:1;">4</div><div style="width:40px; height:2px; background:var(--terra); margin:12px auto;"></div><div style="font-size:14px; color:rgba(237,232,220,0.7);">Leões em Cannes.<br>Nenhum seguindo manual.</div></div>
+          <div style="background:var(--terra); color:var(--cream); padding:12px 32px; border-radius:36px; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">VEJA CASES</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-display); font-size:24px; margin-bottom:24px;">LinkedIn Post (1200x628)</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:64px;">
+        <div style="background:#0D0D0D; border:1px solid rgba(237,232,220,0.08); border-radius:8px; padding:40px; aspect-ratio:1200/628; display:flex; flex-direction:column; justify-content:space-between;">
+          <div style="display:flex; align-items:center; gap:12px;"><img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px;" alt="UNLMTD"><div style="width:32px; height:2px; background:var(--terra);"></div><span style="font-size:10px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(237,232,220,0.6);">SHAPELESS CREATIVE</span></div>
+          <div style="font-family:var(--font-display); font-size:22px; line-height:1.3; max-width:70%;">A gente descobriu que equipes<br>enxutas chegam mais longe.<br>Na maioria das vezes.</div>
+        </div>
+        <div style="background:#EDE8DC; color:#0D0D0D; border-radius:8px; padding:40px; aspect-ratio:1200/628; display:flex; flex-direction:column; justify-content:space-between;">
+          <div style="display:flex; align-items:center; gap:12px;"><img src="brandbook/assets/unlmtd-wordmark.svg" style="height:14px; filter:brightness(0);" alt="UNLMTD"><div style="width:32px; height:2px; background:var(--terra);"></div><span style="font-size:10px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(13,13,13,0.5);">SHAPELESS CREATIVE</span></div>
+          <div style="font-family:var(--font-display); font-size:22px; line-height:1.3; color:#0D0D0D; max-width:70%;">Cocriação radical produz trabalho<br>que fórmulas não conseguem.</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-display); font-size:24px; margin-bottom:24px;">Assinatura de Email</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div style="background:#fff; color:#0D0D0D; border-radius:8px; padding:32px; font-size:14px; line-height:1.6;">
+          <div style="font-weight:600;">David Levy</div>
+          <div style="color:#666; font-size:13px; margin-bottom:12px;">Founder</div>
+          <div style="color:#888; font-size:13px;">david@unlmtd.com.br</div>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:16px; padding-top:16px; border-top:2px solid var(--terra);"><img src="brandbook/assets/unlmtd-wordmark.svg" style="height:18px; filter:brightness(0);" alt="UNLMTD"><div style="width:24px; height:2px; background:var(--terra);"></div><span style="font-size:10px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#666;">SHAPELESS CREATIVE</span></div>
+        </div>
+        <div style="background:#fff; color:#0D0D0D; border-radius:8px; padding:32px; font-size:14px; line-height:1.6;">
+          <div style="font-weight:600;">Pepper</div>
+          <div style="color:#666; font-size:13px; margin-bottom:12px;">Creative Director</div>
+          <div style="color:#888; font-size:13px;">pepper@unlmtd.com.br</div>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:16px; padding-top:16px; border-top:2px solid var(--ouro);"><img src="brandbook/assets/unlmtd-wordmark.svg" style="height:18px; filter:brightness(0);" alt="UNLMTD"><div style="width:24px; height:2px; background:var(--ouro);"></div><span style="font-size:10px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#666;">DIGITAL</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" alt="UNLMTD" class="footer__wordmark">
+    <p class="footer__text">UNLMTD Brandbook v2.0 | 2026-05-07</p>
+    <p class="footer__text" style="margin-top: 8px;">Shapeless Creative</p>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL REVEAL JS
+       ═══════════════════════════════════════════ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      reveals.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

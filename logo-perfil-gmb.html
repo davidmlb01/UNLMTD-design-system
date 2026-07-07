@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>UNLMTD — Logo Perfil Google Meu Negócio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      gap: 28px;
+      padding: 40px;
+    }
+    h1 {
+      color: #EDE8DC;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+    canvas#preview {
+      width: 360px;
+      height: 360px;
+      display: block;
+      border-radius: 3px;
+    }
+    .size-label {
+      color: #EDE8DC;
+      font-size: 11px;
+      opacity: 0.25;
+      letter-spacing: 0.12em;
+    }
+    .btn {
+      background: #EDE8DC;
+      color: #0D0D0D;
+      border: none;
+      padding: 13px 36px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.8; }
+    .btn:disabled { opacity: 0.25; cursor: not-allowed; }
+    .status {
+      color: #EDE8DC;
+      font-size: 11px;
+      opacity: 0.3;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>UNLMTD &nbsp;·&nbsp; Perfil Google Meu Negócio</h1>
+
+  <canvas id="preview" width="720" height="720"></canvas>
+  <span class="size-label">720 × 720 px</span>
+
+  <button class="btn" id="downloadBtn" disabled>Baixar PNG</button>
+  <span class="status" id="status">Carregando símbolo...</span>
+
+  <script>
+    const SIZE = 720;
+    const BG   = '#0D0D0D';
+    const CREAM = '#EDE8DC'; // rgb(237,232,220)
+
+    const preview = document.getElementById('preview');
+    const ctx     = preview.getContext('2d');
+    const btn     = document.getElementById('downloadBtn');
+    const status  = document.getElementById('status');
+
+    // Retorna um offscreen canvas com o símbolo colorido em CREAM sobre fundo transparente
+    function colorizeSymbol(img) {
+      const off = document.createElement('canvas');
+      off.width  = img.naturalWidth;
+      off.height = img.naturalHeight;
+      const octx = off.getContext('2d');
+
+      // 1. Pinta a máscara do símbolo
+      octx.drawImage(img, 0, 0);
+
+      // O PNG original é preto (0,0,0,255) sobre transparente.
+      // 'source-in' pinta SOMENTE onde existe alpha, usando a cor nova.
+      octx.globalCompositeOperation = 'source-in';
+      octx.fillStyle = CREAM;
+      octx.fillRect(0, 0, off.width, off.height);
+
+      return off;
+    }
+
+    function render(img) {
+      ctx.clearRect(0, 0, SIZE, SIZE);
+
+      // Fundo preto
+      ctx.fillStyle = BG;
+      ctx.fillRect(0, 0, SIZE, SIZE);
+
+      // Símbolo colorido em cream, centralizado com padding
+      const symbol = colorizeSymbol(img);
+      const maxW   = 500;
+      const scale  = maxW / symbol.width;
+      const drawW  = symbol.width  * scale;
+      const drawH  = symbol.height * scale;
+      const x = (SIZE - drawW) / 2;
+      const y = (SIZE - drawH) / 2;
+
+      ctx.drawImage(symbol, x, y, drawW, drawH);
+
+      btn.disabled = false;
+      status.textContent = 'Pronto.';
+    }
+
+    function renderFallback() {
+      ctx.fillStyle = BG;
+      ctx.fillRect(0, 0, SIZE, SIZE);
+
+      // Fallback: símbolo ∞ com texto
+      ctx.fillStyle = CREAM;
+      ctx.font = '700 300px Georgia, "Times New Roman", serif';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('∞', SIZE / 2, SIZE / 2 + 12);
+
+      btn.disabled = false;
+      status.textContent = 'Preview (símbolo de sistema — abra via servidor local para versão exata).';
+    }
+
+    // Carrega via fetch para evitar taint no canvas
+    fetch('./brandbook/assets/unlmtd-symbol-infinity.png')
+      .then(r => {
+        if (!r.ok) throw new Error('not found');
+        return r.blob();
+      })
+      .then(blob => {
+        const url = URL.createObjectURL(blob);
+        const img = new Image();
+        img.onload = () => { render(img); URL.revokeObjectURL(url); };
+        img.onerror = renderFallback;
+        img.src = url;
+      })
+      .catch(renderFallback);
+
+    btn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.download = 'UNLMTD-logo-GMB-720x720.png';
+      link.href = preview.toDataURL('image/png');
+      link.click();
+      status.textContent = 'PNG baixado.';
+    });
+  </script>
+
+</body>
+</html>

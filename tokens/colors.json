@@ -1,0 +1,33 @@
+{
+  "color": {
+    "base": {
+      "black":      { "value": "#0D0D0D", "comment": "UNLMTD Black — fundo principal" },
+      "cream":      { "value": "#EDE8DC", "comment": "UNLMTD Cream — texto sobre escuro" },
+      "bone":       { "value": "#F5F0E8", "comment": "Variação clara do creme" },
+      "ink":        { "value": "#1A1A1A", "comment": "Superfícies elevadas sobre preto" }
+    },
+    "secondary": {
+      "champagne":  { "value": "#C4A45A", "comment": "Destaques premium, CTAs, hover" },
+      "rust":       { "value": "#C1440E", "comment": "Vermelho seco — sarcasmo, alertas, impacto" }
+    },
+    "neutral": {
+      "100":        { "value": "#F5F0E8" },
+      "200":        { "value": "#EDE8DC" },
+      "300":        { "value": "#D4CEC2" },
+      "400":        { "value": "#A09A8E" },
+      "500":        { "value": "#6B6560" },
+      "600":        { "value": "#3D3935" },
+      "700":        { "value": "#2A2620" },
+      "800":        { "value": "#1A1814" },
+      "900":        { "value": "#0D0D0D" }
+    },
+    "semantic": {
+      "background":    { "value": "{color.base.black.value}" },
+      "surface":       { "value": "{color.base.ink.value}" },
+      "text-primary":  { "value": "{color.base.cream.value}" },
+      "text-secondary":{ "value": "{color.neutral.400.value}" },
+      "accent":        { "value": "{color.secondary.champagne.value}" },
+      "danger":        { "value": "{color.secondary.rust.value}" }
+    }
+  }
+}

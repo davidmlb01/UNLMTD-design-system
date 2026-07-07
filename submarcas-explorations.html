@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNLMTD Submarcas Retrabalho</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0D0D0D; color: #EDE8DC; font-family: 'Inter', system-ui, sans-serif; }
+
+  .page { padding: 60px 80px; max-width: 1400px; margin: 0 auto; }
+
+  h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 8px; }
+  .meta { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(237,232,220,0.35); margin-bottom: 80px; }
+
+  h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 32px; font-weight: 400; margin-bottom: 8px; }
+  .section-sub { font-size: 13px; color: rgba(237,232,220,0.4); margin-bottom: 48px; }
+
+  .divider { border: none; border-top: 1px solid rgba(237,232,220,0.08); margin: 80px 0; }
+
+  /* ANTES vs DEPOIS */
+  .compare-label { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+  .compare-label.bad { color: #EF4444; }
+  .compare-label.good { color: #22C55E; }
+
+  /* Submarcas grid */
+  .submarcas-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-bottom: 48px; }
+
+  .submarca-card { padding: 60px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 280px; }
+
+  /* Wordmark simulado */
+  .wordmark { height: 36px; margin-bottom: 16px; object-fit: contain; }
+  .wordmark-large { height: 48px; }
+  .wordmark-dark { filter: none; } /* cream on dark = natural */
+  .wordmark-light { filter: brightness(0); } /* black on light */
+  .accent-line { width: 80px; height: 2px; background: #C4622D; margin-bottom: 16px; }
+  .accent-line-short { width: 40px; }
+  .descriptor { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+
+  /* ANTES cards */
+  .before-video { background: #0D0D0D; color: #EDE8DC; }
+  .before-digital { background: #EDE8DC; color: #1E3A5F; }
+  .before-ia { background: #C4622D; color: #EDE8DC; }
+
+  /* DEPOIS cards - DARK (padrao) */
+  .after-dark { background: #0D0D0D; color: #EDE8DC; border: 1px solid rgba(237,232,220,0.06); }
+  .after-dark .descriptor { color: rgba(237,232,220,0.85); }
+
+  /* DEPOIS cards - LIGHT */
+  .after-light { background: #EDE8DC; color: #0D0D0D; }
+  .after-light .descriptor { color: rgba(13,13,13,0.75); }
+
+  /* Cores das linhas por vertical */
+  .line-video { background: #C4622D; }
+  .line-digital { background: #C8922A; }
+  .line-ia { background: #3B82F6; }
+  .line-branding { background: #EDE8DC; opacity: 0.4; }
+  .line-music { background: #9333EA; }
+  .line-strategy { background: #22C55E; }
+
+  /* Horizontal layout */
+  .horizontal-grid { display: flex; gap: 60px; margin-bottom: 48px; flex-wrap: wrap; }
+  .horizontal-item { display: flex; align-items: center; gap: 16px; }
+  .horizontal-item .accent-line { width: 40px; margin-bottom: 0; }
+  .horizontal-item .wordmark { margin-bottom: 0; font-size: 24px; }
+  .horizontal-item .descriptor { font-size: 11px; }
+
+  /* Aplicacoes */
+  .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  .app-card { border-radius: 12px; overflow: hidden; }
+
+  /* Favicon/icon grid */
+  .icon-grid { display: flex; align-items: flex-end; gap: 32px; margin-bottom: 48px; }
+  .icon-item { text-align: center; }
+  .icon-box { display: flex; align-items: center; justify-content: center; background: #0D0D0D; border: 1px solid rgba(237,232,220,0.1); border-radius: 8px; }
+  .icon-label { font-size: 11px; color: rgba(237,232,220,0.3); margin-top: 8px; }
+
+  /* Email signature */
+  .email-sig { background: #fff; color: #0D0D0D; padding: 32px; border-radius: 8px; max-width: 500px; font-size: 14px; line-height: 1.6; }
+  .email-sig .sig-name { font-weight: 600; margin-bottom: 2px; }
+  .email-sig .sig-role { color: #666; font-size: 13px; margin-bottom: 12px; }
+  .email-sig .sig-brand { display: flex; align-items: center; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 2px solid #C4622D; }
+  .email-sig .sig-brand .wordmark { font-size: 16px; color: #0D0D0D; margin-bottom: 0; letter-spacing: 0.05em; }
+  .email-sig .sig-brand .accent-line { width: 24px; margin-bottom: 0; height: 2px; }
+  .email-sig .sig-brand .descriptor { font-size: 10px; color: #666; }
+
+  /* Social card */
+  .social-card { background: #0D0D0D; border: 1px solid rgba(237,232,220,0.08); border-radius: 12px; padding: 48px; text-align: center; }
+  .social-card .wordmark { font-size: 42px; margin-bottom: 20px; }
+
+  /* OG image preview */
+  .og-preview { background: #0D0D0D; border: 1px solid rgba(237,232,220,0.08); border-radius: 12px; padding: 40px 60px; aspect-ratio: 1200/630; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .og-preview .wordmark { font-size: 28px; margin-bottom: 12px; }
+  .og-preview .og-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 36px; line-height: 1.2; margin-top: 16px; max-width: 70%; }
+
+  /* Motion spec */
+  .motion-spec { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .motion-card { background: rgba(237,232,220,0.03); border-radius: 12px; padding: 32px; }
+  .motion-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .motion-card p { font-size: 13px; color: rgba(237,232,220,0.5); line-height: 1.5; }
+  .motion-card .timing { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C4622D; margin-top: 12px; }
+
+  /* Regra visual */
+  .rule-box { background: rgba(237,232,220,0.03); border-left: 3px solid #C4622D; padding: 24px 32px; margin-bottom: 24px; border-radius: 0 8px 8px 0; }
+  .rule-box strong { color: #EDE8DC; }
+  .rule-box p { font-size: 14px; color: rgba(237,232,220,0.6); line-height: 1.6; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<h1>UNLMTD Submarcas</h1>
+<div class="meta">Retrabalho pelo Brand Squad: Olins + Scher + Bierut | 2026-05-07</div>
+
+<!-- ==================== ANTES ==================== -->
+
+<div class="compare-label bad">ANTES (rejeitado por David)</div>
+<p class="section-sub">Três fundos diferentes, três cores de wordmark, três posições de descriptor. Não é sistema. São três logos avulsos.</p>
+
+<div class="submarcas-grid">
+  <div class="submarca-card before-video">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+    <div style="width:60px; height:1px; background:rgba(237,232,220,0.3); margin-bottom:12px;"></div>
+    <div class="descriptor" style="color:rgba(237,232,220,0.6);">VIDEO</div>
+  </div>
+  <div class="submarca-card before-digital">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD" style="filter:brightness(0) saturate(100%) invert(17%) sepia(30%) saturate(1200%) hue-rotate(185deg);">
+    <div style="width:60px; height:1px; background:#1E3A5F; opacity:0.3; margin-bottom:12px;"></div>
+    <div class="descriptor" style="color:rgba(30,58,95,0.5);">DIGITAL</div>
+  </div>
+  <div class="submarca-card before-ia">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+    <div style="width:0; height:0; margin-bottom:0;"></div>
+    <div class="descriptor" style="position:relative; align-self:flex-end; margin-top:20px; color:rgba(237,232,220,0.6);">IA</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== DEPOIS - DARK ==================== -->
+
+<div class="compare-label good">DEPOIS: MODO DARK (padrao) com linha por vertical</div>
+<p class="section-sub">Uma regra, infinitas submarcas. Fundo black. Wordmark cream. Linha na COR DA VERTICAL. Descriptor visivel.</p>
+
+<div class="submarcas-grid">
+  <div class="submarca-card after-dark">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large" alt="UNLMTD">
+    <div class="accent-line line-video"></div>
+    <div class="descriptor">VIDEO</div>
+  </div>
+  <div class="submarca-card after-dark">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large" alt="UNLMTD">
+    <div class="accent-line line-digital"></div>
+    <div class="descriptor">DIGITAL</div>
+  </div>
+  <div class="submarca-card after-dark">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large" alt="UNLMTD">
+    <div class="accent-line line-ia"></div>
+    <div class="descriptor">IA</div>
+  </div>
+</div>
+
+<!-- Mais submarcas possiveis -->
+<p style="font-size:12px; color:rgba(237,232,220,0.3); margin-bottom:48px;">O sistema gera qualquer submarca nova sem pedir permissão:</p>
+<div class="submarcas-grid">
+  <div class="submarca-card after-dark">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large" alt="UNLMTD">
+    <div class="accent-line line-branding"></div>
+    <div class="descriptor">BRANDING</div>
+  </div>
+  <div class="submarca-card after-dark">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large" alt="UNLMTD">
+    <div class="accent-line line-music"></div>
+    <div class="descriptor">MUSIC</div>
+  </div>
+  <div class="submarca-card after-dark">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large" alt="UNLMTD">
+    <div class="accent-line line-strategy"></div>
+    <div class="descriptor">STRATEGY</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== DEPOIS - LIGHT ==================== -->
+
+<div class="compare-label good">DEPOIS: MODO LIGHT</div>
+<p class="section-sub">Mesma regra, cores invertidas. Linha mantém a cor da vertical.</p>
+
+<div class="submarcas-grid">
+  <div class="submarca-card after-light">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large wordmark-light" alt="UNLMTD">
+    <div class="accent-line line-video"></div>
+    <div class="descriptor">VIDEO</div>
+  </div>
+  <div class="submarca-card after-light">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large wordmark-light" alt="UNLMTD">
+    <div class="accent-line line-digital"></div>
+    <div class="descriptor">DIGITAL</div>
+  </div>
+  <div class="submarca-card after-light">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-large wordmark-light" alt="UNLMTD">
+    <div class="accent-line line-ia"></div>
+    <div class="descriptor">IA</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== HORIZONTAL ==================== -->
+
+<h2>Versão Horizontal</h2>
+<p class="section-sub">Para headers, navegação, assinaturas de email, rodapés.</p>
+
+<div style="background:rgba(237,232,220,0.03); border-radius:12px; padding:48px;">
+  <div class="horizontal-grid">
+    <div class="horizontal-item">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-video"></div>
+      <div class="descriptor">VIDEO</div>
+    </div>
+    <div class="horizontal-item">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-digital"></div>
+      <div class="descriptor">DIGITAL</div>
+    </div>
+    <div class="horizontal-item">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-ia"></div>
+      <div class="descriptor">IA</div>
+    </div>
+  </div>
+  <div class="horizontal-grid" style="margin-bottom:0;">
+    <div class="horizontal-item">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-branding"></div>
+      <div class="descriptor">BRANDING</div>
+    </div>
+    <div class="horizontal-item">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-music"></div>
+      <div class="descriptor">MUSIC</div>
+    </div>
+    <div class="horizontal-item">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-strategy"></div>
+      <div class="descriptor">STRATEGY</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== EMAIL SIGNATURE ==================== -->
+
+<h2>Aplicação: Assinatura de Email</h2>
+<p class="section-sub">A submarca aparece na assinatura de cada colaborador.</p>
+
+<div class="app-grid">
+  <div class="email-sig">
+    <div class="sig-name">David Levy</div>
+    <div class="sig-role">Founder</div>
+    <div style="color:#888; font-size:13px;">david@unlmtd.com.br</div>
+    <div class="sig-brand">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-light" style="height:20px;" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-video" style="margin-bottom:0;"></div>
+      <div class="descriptor" style="color:#666;">VIDEO</div>
+    </div>
+  </div>
+  <div class="email-sig">
+    <div class="sig-name">Colaborador X</div>
+    <div class="sig-role">Creative Director</div>
+    <div style="color:#888; font-size:13px;">nome@unlmtd.com.br</div>
+    <div class="sig-brand">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark wordmark-light" style="height:20px;" alt="UNLMTD">
+      <div class="accent-line accent-line-short line-branding" style="margin-bottom:0; background:#3D3D3D;"></div>
+      <div class="descriptor" style="color:#666;">BRANDING</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== OG IMAGE ==================== -->
+
+<h2>Aplicação: OG Image (Social Share)</h2>
+<p class="section-sub">Quando alguem compartilha um link da UNLMTD no WhatsApp ou LinkedIn.</p>
+
+<div class="og-preview">
+  <div style="display:flex; align-items:center; gap:12px;">
+    <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" style="height:20px; margin-bottom:0;" alt="UNLMTD">
+    <div class="accent-line accent-line-short" style="margin-bottom:0;"></div>
+    <div class="descriptor" style="font-size:10px;">DIGITAL</div>
+  </div>
+  <div class="og-title">A gente não sabia o que era UNLMTD.<br>Por isso criamos do zero.</div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== SOCIAL CARD ==================== -->
+
+<h2>Aplicação: Social Media Avatar</h2>
+<p class="section-sub">Perfil unificado vs perfis por submarca.</p>
+
+<div style="display:flex; gap:24px; margin-bottom:48px;">
+  <div style="text-align:center;">
+    <div style="width:120px; height:120px; border-radius:50%; background:#0D0D0D; border:1px solid rgba(237,232,220,0.1); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:18px;" alt="UNLMTD">
+    </div>
+    <div class="icon-label" style="margin-top:12px;">Mae (Instagram/LinkedIn)</div>
+  </div>
+  <div style="text-align:center;">
+    <div style="width:120px; height:120px; border-radius:50%; background:#0D0D0D; border:1px solid rgba(237,232,220,0.1); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:16px;" alt="UNLMTD">
+      <div style="width:30px; height:1.5px; background:#C4622D;"></div>
+      <span style="font-size:10px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(237,232,220,0.9);">VIDEO</span>
+    </div>
+    <div class="icon-label" style="margin-top:12px;">Video (YouTube)</div>
+  </div>
+  <div style="text-align:center;">
+    <div style="width:120px; height:120px; border-radius:50%; background:#0D0D0D; border:1px solid rgba(237,232,220,0.1); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" style="height:16px;" alt="UNLMTD">
+      <div style="width:30px; height:1.5px; background:#C4622D;"></div>
+      <span style="font-size:10px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(237,232,220,0.9);">IA</span>
+    </div>
+    <div class="icon-label" style="margin-top:12px;">IA (perfil especifico)</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== REGRAS ==================== -->
+
+<h2>Regras do Sistema</h2>
+<p class="section-sub">O que garante que funciona para sempre.</p>
+
+<div class="rule-box">
+  <strong>1. Wordmark NUNCA muda.</strong>
+  <p>Mesmo tamanho, mesma fonte, mesma posição. Em todas as submarcas. Sem exceção.</p>
+</div>
+
+<div class="rule-box">
+  <strong>2. A linha identifica a vertical pela COR.</strong>
+  <p>2px de altura, 80px de largura (vertical) ou 40px (horizontal). Centralizada entre wordmark e descriptor. Cada vertical tem sua cor própria: Video = Terra #C4622D, Digital = Ouro #C8922A, IA = Blue #3B82F6, Branding = Cream 40%, Music = Purple #9333EA, Strategy = Green #22C55E.</p>
+</div>
+
+<div class="rule-box">
+  <strong>3. Descriptor é o segundo elemento variável (além da cor da linha).</strong>
+  <p>Inter Semibold 600, 15px, caps, tracking 0.2em. Cor: 85% opacidade do texto principal. Centralizado.</p>
+</div>
+
+<div class="rule-box">
+  <strong>4. Dois modos, nada mais.</strong>
+  <p>DARK: fundo #0D0D0D, wordmark #EDE8DC. LIGHT: fundo #EDE8DC, wordmark #0D0D0D. A linha Terra é a mesma nos dois.</p>
+</div>
+
+<div class="rule-box">
+  <strong>5. Nova submarca em 30 segundos.</strong>
+  <p>Precisa de "UNLMTD Performance"? Troca o descriptor. Pronto. Sem reunião, sem design novo, sem aprovação especial.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== DO/DONT ==================== -->
+
+<h2>Do / Don't</h2>
+<p class="section-sub">Exemplos visuais do que funciona e do que não funciona.</p>
+
+<div class="submarcas-grid" style="gap:24px;">
+  <!-- DO -->
+  <div style="text-align:center;">
+    <div class="submarca-card after-dark" style="margin-bottom:12px;">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" style="height:32px;" alt="UNLMTD">
+      <div class="accent-line"></div>
+      <div class="descriptor">VIDEO</div>
+    </div>
+    <span style="font-size:12px; color:#22C55E;">Correto: fundo consistente, wordmark identico</span>
+  </div>
+
+  <!-- DONT 1 -->
+  <div style="text-align:center;">
+    <div class="submarca-card" style="background:#C4622D; min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:12px;">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" style="height:32px;" alt="UNLMTD">
+      <div style="width:80px; height:2px; background:#EDE8DC; margin-bottom:16px;"></div>
+      <div class="descriptor" style="color:rgba(237,232,220,0.6);">VIDEO</div>
+    </div>
+    <span style="font-size:12px; color:#EF4444;">Errado: fundo Terra. Linha branca. Perde identidade.</span>
+  </div>
+
+  <!-- DONT 2 -->
+  <div style="text-align:center;">
+    <div class="submarca-card" style="background:#EDE8DC; min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:12px;">
+      <img src="brandbook/assets/unlmtd-wordmark.svg" class="wordmark" style="height:32px; filter: brightness(0) saturate(100%) invert(42%) sepia(54%) saturate(1200%) hue-rotate(348deg);" alt="UNLMTD">
+      <div style="width:80px; height:2px; background:#0D0D0D; margin-bottom:16px;"></div>
+      <div class="descriptor" style="color:rgba(13,13,13,0.5);">VIDEO</div>
+    </div>
+    <span style="font-size:12px; color:#EF4444;">Errado: wordmark em cor diferente. Não é a marca.</span>
+  </div>
+</div>
+
+<div style="margin-top:120px; padding:40px 0; border-top:1px solid rgba(237,232,220,0.08); font-size:12px; color:rgba(237,232,220,0.2);">
+  UNLMTD Submarcas Retrabalho v1 | Brand Squad: Olins + Scher + Bierut | Abrir no browser
+</div>
+
+</div>
+</body>
+</html>
